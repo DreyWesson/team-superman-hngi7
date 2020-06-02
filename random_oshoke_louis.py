@@ -7,6 +7,5 @@ def say_hello(full_name, id:int, language):
     using {language} for stage 2 task")
 
 
-
 say_hello("Oshoke Louis", "12345", "python")
 

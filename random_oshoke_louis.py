@@ -3,9 +3,8 @@
 # containing the HNGi7 Intern profile
 
 def say_hello(full_name, id:int, language):
-    print (f"Hello World, this is {full_name} with HNGi7 ID {id} \
-    using {language} for stage 2 task")
+    return (f"Hello World, this is {full_name} with HNGi7 ID {id} using {language} for stage 2 task")
 
 
-say_hello("Oshoke Louis", "12345", "python")
+print(say_hello("Oshoke Louis", "HNG-01673", "python"))
 

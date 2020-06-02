@@ -9,12 +9,13 @@ header("Cache-Control: no-cache, must-revalidate");
 // gzip for this request.
 header('X-Accel-Buffering: no');
 
+// regex pattern for validation
 $pattern = '/^(Hello\sWorld,\sthis\sis)\s([a-zA-Z]+)\s([a-zA-Z]+)\s(with\sHNGi7\sID)\s(HNG-[0-9]{5})\s(using)\s([a-zA-Z.]+)\s(for\sstage\s2\stask)$/';
 $result = [];
 
 $dir = 'scripts';
 if ($dh = opendir($dir)) {
-  $files = scandir($dir); // sorting: 0 = ascending & 1 = descending
+  $files = scandir($dir);
   for ($i = 2; $i < count($files); $i++) {
     $filename = "$dir/$files[$i]";
     $fileType = pathinfo($filename, PATHINFO_EXTENSION);
@@ -41,8 +42,6 @@ if ($dh = opendir($dir)) {
         $result[$output] = 'fail';
       }
     }
-    ob_flush();
-    flush();
   }
 }
 
@@ -51,7 +50,8 @@ if (isset($_GET['json'])) {
   header('Content-type:  application/json;');
   echo json_encode($result);
 } else {
-  // Set a valid header so browsers pick it up correctly.
+    // Set a valid header so browsers pick it up correctly.
+    header('Content-type:  text/html;');
   foreach ($result as $key => $value) {
     echo "$key - $value<br>";
   } 

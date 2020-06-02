@@ -1,34 +1,58 @@
 <?php
-$files = scandir('scripts');
-if($files) {
-    foreach($files as $file) {
-        echo 'File: '.$file.'<br />';
+// Emulate the header BigPipe sends so we can test through Varnish.
+header('Surrogate-Control: BigPipe/1.0');
 
-        unset($output);
-        if(preg_match('/.php$/i', $file)){
-            $output = exec('php scripts/'.$file);
-        } elseif(preg_match('/.py$/i', $file)) {
-            $output = exec('python scripts/'.$file);
-        } elseif(preg_match('/.js$/i', $file)) {
-            $output = exec('node scripts/'.$file);
-        }
+// Explicitly disable caching so Varnish and other upstreams won't cache.
+header("Cache-Control: no-cache, must-revalidate");
 
-        if(isset($output)) {
-            echo 'Output: '.$output.'<br />';
-            $result =  [];
-            preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task(.|)$/i', $output, $result);
-            if(count($result) > 0) {
-                echo 'Name: '.$result[1].'<br />';
-                echo 'HNGi7 ID: '.$result[2].'<br />';
-                echo 'Language: '.$result[4].'<br />';
-                echo 'Result: Passed, congrats!!!';
-            } else {
-                echo 'Result: Fail :(';
-            }
-        } else {
-            echo 'Result: Fail :(';
-        }
+// Setting this header instructs Nginx to disable fastcgi_buffering and disable
+// gzip for this request.
+header('X-Accel-Buffering: no');
 
-        echo '<br /><br />';
+$pattern = '/^(Hello\sWorld,\sthis\sis)\s([a-zA-Z]+)\s([a-zA-Z]+)\s(with\sHNGi7\sID)\s(HNG-[0-9]{5})\s(using)\s([a-zA-Z.]+)\s(for\sstage\s2\stask)$/';
+$result = [];
+
+$dir = 'scripts';
+if ($dh = opendir($dir)) {
+  $files = scandir($dir); // sorting: 0 = ascending & 1 = descending
+  for ($i = 2; $i < count($files); $i++) {
+    $filename = "$dir/$files[$i]";
+    $fileType = pathinfo($filename, PATHINFO_EXTENSION);
+    if ($fileType == 'js') {
+      $output = shell_exec(" node $filename");
+      if (preg_match($pattern, $output)) {
+        $result[$output] = 'pass';
+      } else {
+        $result[$output] = 'fail';
+      }
+    } elseif ($fileType == 'py') {
+      $output = shell_exec(" python $filename");
+      if (preg_match($pattern, $output)) {
+        $result[$output] = 'pass';
+      } else {
+        $result[$output] = 'fail';
+      }
+    } elseif ($fileType == 'php') {
+      $content = file_get_contents($filename);
+      $output = eval("?>$content");
+      if (preg_match($pattern, $output)) {
+        $result[$output] = 'pass';
+      } else {
+        $result[$output] = 'fail';
+      }
     }
+    ob_flush();
+    flush();
+  }
+}
+
+if (isset($_GET['json'])) {
+  // Set a valid header so browsers pick it up correctly.
+  header('Content-type:  application/json;');
+  echo json_encode($result);
+} else {
+  // Set a valid header so browsers pick it up correctly.
+  foreach ($result as $key => $value) {
+    echo "$key - $value<br>";
+  } 
 }

@@ -4,7 +4,8 @@
   "description": "open terminal,\r 1. run `PHP -v` to ensure you have PHP installed\r 2. run `node -v` to ensure you have NOdeJs installed\r 3. run `python --version` to ensure you have python installed",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "start": ""
   },
   "repository": "",
   "author": "Team-superman",

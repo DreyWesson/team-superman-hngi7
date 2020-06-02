@@ -3,4 +3,4 @@ function sayHello(fullname, id, language) {
     `Hello World, this is ${fullname} with HNGi7 ${id} using ${language}`
   );
 }
-sayHello();
+sayHello(fullname, id, language);

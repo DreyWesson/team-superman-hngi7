@@ -5,9 +5,9 @@ const email = 'gaftofi@gmail.com';
 
 const introduce = (name, id, language) => {
   
- console.log(`Hello world, this is ${name} with HNGi7 ID of ${id} using ${language} for stage 2 task`);
+ console.log(`Hello world, this is ${name} with HNGi7 ID of ${id} using ${language} for stage 2 task.${email}`);
 
 };
 
-introduce (name, id, language);
+introduce (name, id, language, email);
 

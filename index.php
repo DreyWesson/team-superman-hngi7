@@ -17,7 +17,6 @@ if ($files) {
         }
 
         if (isset($output)) {
-            $script['output'] = $output;
             $result = [];
             preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
             if (count($result) > 0) {
@@ -26,12 +25,14 @@ if ($files) {
                 $script['language'] = $result[4];
                 $script['status'] = 'Pass';
                 $script['email']= $result[5];
+                $script['output'] = substr($output,0,strpos($output,"."));
             } else {
                 $script['name'] = "";
                 $script['id'] = "";
                 $script['language'] = "";
                 $script['status'] = 'Fail';
                 $script['email']='';
+                $script['output'] = '';
             }
 
             array_push($final, $script);

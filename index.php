@@ -80,6 +80,7 @@ if (!isset($_GET['json'])) {
                     <th>Output</th>
                     <th>File Name</th>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Language</th>
                     <th>ID</th>
                 </tr>
@@ -91,6 +92,7 @@ if (!isset($_GET['json'])) {
                         <td><?=$script['output']?></td>
                         <td><?=$script['file']?></td>
                         <td><?=$script['name']?></td>
+                        <td><?=$script['email']?></td>
                         <td><?=$script['language']?></td>
                         <td><?=$script['id']?></td>
 

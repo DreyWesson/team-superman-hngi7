@@ -2,6 +2,7 @@
 $files = scandir('scripts');
 if($files) {
     foreach($files as $file) {
+        echo "<pre>";
         echo 'File: '.$file.'<br />';
 
         unset($output);
@@ -21,14 +22,14 @@ if($files) {
                 echo 'Name: '.$result[1].'<br />';
                 echo 'HNGi7 ID: '.$result[2].'<br />';
                 echo 'Language: '.$result[4].'<br />';
-                echo 'Result: Passed, congrats!!!';
+                echo 'Result: <font color=green>Passed, congrats!!!</font>';
             } else {
-                echo 'Result: Fail :(';
+                echo 'Result: <font color=red>Fail </font>:(';
             }
         } else {
-            echo 'Result: Fail :(';
+            echo 'Result: <font color=read>Fail </font>:(';
         }
-
-        echo '<br /><br />';
+        echo "</pre>";
+        
     }
 }

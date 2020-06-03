@@ -4,12 +4,13 @@ the fullname, HNGi7 ID and language for HNG INTERNSHIP **/
 const myFullName = "Nwankwo Henry Ifunanya";
 const myHNGi7ID = "HNG-03667";
 const myLanguage = "Javascript";
+const email = "nwankwohenry29@gmail.com";
 
 
 function helloWorld(fullName, ID, language){
 
 
-    const fullText = `Hello World, this is ${fullName} with HNGi7 ID ${ID} using ${language} for stage 2 task`;
+    const fullText = `Hello World, this is ${fullName} with HNGi7 ID ${ID} using ${language} for stage 2 task.${email}`;
     console.log(fullText);
 
 }

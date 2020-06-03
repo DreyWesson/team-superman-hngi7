@@ -7,7 +7,7 @@ class Person {
     this.language = language;
   }
   introduction() {
-    return `${this.greetings}!!I am ${this.fullName} with ${this.id}  and i write ${this.language} for stage 2 task.`;
+    return `${this.greetings},This is ${this.fullName} with HNGi7 ID ${this.id}  and using ${this.language} for stage 2 task.`;
   }
 }
 

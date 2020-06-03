@@ -1,5 +1,5 @@
-const introduce = (name, id, language) => {
+
   
-return `Hello world, this is ${name} with HNGi ID of ${id} using ${language} language`;
-};
-introduce ('Abdulgafar', 'HNGI-01368', 'javascript');
+console.log(`Hello world, this is Yusuf Abdulgafar with HNGi7 ID of HNG-01368 using JavaScript for stage 2 task`);
+
+

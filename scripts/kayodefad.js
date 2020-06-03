@@ -4,9 +4,9 @@ const introduceYou = (fullName, id, language, email) => {
 	);
 };
 
-introduceYou(
-	'Oluwakayode Fadoju',
-	'HNG-01390',
-	'JavaScript',
-	'fadojuk@gmail.com'
-);
+const fullName = 'Oluwakayode Fadoju';
+const id = 'HNG-01390';
+const language = 'JavaScript';
+const email = 'fadojuk@gmail.com';
+
+introduceYou(fullName, id, language, email);

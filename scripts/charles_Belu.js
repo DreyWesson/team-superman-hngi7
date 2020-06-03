@@ -9,5 +9,5 @@ let userDetails = {
         console.log (`Hello World, this is ${userName} with HNGi7 ID ${id} using ${lang} for stage 2 task`);
     }//function to output the object property values. 
 };
-let { userName, id,lang } = userDetails; //destructuring of object 
+let { userName,id,email,lang } = userDetails; //destructuring of object 
 userDetails.displayInfo("Charles Nwachebelu", "HNG-04564","javaScript");

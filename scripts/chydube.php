@@ -1,6 +1,5 @@
 <?php
 
-
 //function to generate user infomation.
 function identity_generator($name, $id, $language)
 {

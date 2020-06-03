@@ -1,7 +1,7 @@
 name = None
 id = None
 lang = None
-message = "Hello World, this is {} with HNGi7 ID {} using {} for stage two task"
+message = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task"
 
 def userDetails(name, id, lang):
     return message.format(name, id, lang)

@@ -9,5 +9,4 @@
     $output = details_generator("Chidubem Nwankwo","00366","PHP");
 
     echo $output;
-
 ?>

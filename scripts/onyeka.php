@@ -5,5 +5,6 @@ $Lang = "PHP";
 $Email = " Osemeke89@gmail.com";
 
 
-echo "Hello World, this is " .$FullName. " with HNGi7 ID " .$HNGi7Id. " using " .$Lang. " for stage 2 task";
+echo "Hello World, this is " .$FullName. " with HNGi7 ID " .$HNGi7Id. " using " .$Lang. " for stage 2 task.".$Email;
+
 ?>

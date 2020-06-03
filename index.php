@@ -21,12 +21,12 @@ if($files) {
                 echo 'Name: '.$result[1].'<br />';
                 echo 'HNGi7 ID: '.$result[2].'<br />';
                 echo 'Language: '.$result[4].'<br />';
-                echo 'Result: Passed, congrats!!!';
+                echo 'Result: Passed, congrats!!!<br />';
             } else {
-                echo 'Result: Fail :(';
+                echo 'Result: Fail :(<br />';
             }
         } else {
-            echo 'Result: Fail :(';
+            echo 'Result: Fail :(<br />';
         }
 
         echo '<br /><br />';

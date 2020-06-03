@@ -1,4 +1,3 @@
-
 var fullName="Godspower Agofure";
 var idNo="HNG-06251";
 var language="Javascript";
@@ -12,5 +11,3 @@ function hngIntern(fullname, idno, language, email) {
 
 hngIntern(fullName, idNo, language, email);
 
-
-  

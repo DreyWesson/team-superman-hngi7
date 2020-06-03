@@ -1,8 +1,13 @@
 <?php
-$files = scandir('scripts');
+$files = array_filter(scandir('scripts'), function($elem){
+    return !is_dir('scripts/'.$elem);
+});
+$scripts = [];
 if($files) {
-    foreach($files as $file) {
-        echo 'File: '.$file.'<br />';
+    foreach($files as $key => $file) {
+        $script = [];
+
+        $script['file'] = $file;
 
         unset($output);
         if(preg_match('/.php$/i', $file)){
@@ -14,21 +19,21 @@ if($files) {
         }
 
         if(isset($output)) {
-            echo 'Output: '.$output.'<br />';
+            $script['output'] = $output;
             $result =  [];
             preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task(.|)$/i', $output, $result);
             if(count($result) > 0) {
-                echo 'Name: '.$result[1].'<br />';
-                echo 'HNGi7 ID: '.$result[2].'<br />';
-                echo 'Language: '.$result[4].'<br />';
-                echo 'Result: Passed, congrats!!!<br />';
+                $script['Name'] = $result[1];
+                $script['HNGi7 ID'] = $result[2];
+                $script['Language'] = $result[4];
+                $script['Result']= true;
             } else {
-                echo 'Result: Fail !!!<br />';
+                $script['Result'] = false;
             }
         } else {
-            echo 'Result: Fail !!!<br />';
+            $script['Result'] = false;
         }
-
-        echo '<br /><br />';
+        array_push($scripts, $script);
     }
 }
+require_once('./head.php');

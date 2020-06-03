@@ -3,9 +3,10 @@ const hngId = "01290";
 const preferredLang = "Javascript";
 
 function namecheck(){
-    console.log(`Hello world, this is ${internName} with HNGi7_ID ${0}${parseInt(hngId,10)} using ${preferredLang} for stage two task`)
+    console.log(`Hello World, this is ${internName} with HNGi7 ID HNG-${0}${Number(hngId)} using ${preferredLang} for stage 2 task`)
 }
 //Number
 namecheck()
+
 
 

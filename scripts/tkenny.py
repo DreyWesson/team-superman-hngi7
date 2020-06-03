@@ -10,4 +10,3 @@ def userDetails():
     return message
 
 print(userDetails())
-print(type(message))

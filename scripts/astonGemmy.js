@@ -1,5 +1,5 @@
-function logHNG(){
-    console.log(`Hello World, this is ${data.name} with HNGi7 ID ${data.ID} using ${data.language} for stage 2 task.${data.email}`)
+function logHNG(name, ID, language, email){
+    console.log(`Hello World, this is ${name} with HNGi7 ID ${ID} using ${language} for stage 2 task.${email}`)
 }
 
 data = {
@@ -9,4 +9,4 @@ data = {
     "email":"astongemmy@gmail.com",
 };
 
-logHNG(data);
+logHNG(data.Name, data.ID, data.Language, data.Email);

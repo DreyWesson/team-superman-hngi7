@@ -1,0 +1,1 @@
+console.log("Hello world, this is Varis Gkonyo Mwaniki with HNGi7 ID U0144BE7CTH  using JavaScript for stage2 task")

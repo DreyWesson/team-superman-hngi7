@@ -11,7 +11,7 @@ function printDetails(name, id, lang, email){
 
 let myName="Unomieta Joseph";
 let myId="HNG-00199";
-let langused="JavaScripts";
+let langused="JavaScript";
 let myEmail="lionelunomieta@gmail.com";
 
 let myDetail=new myDetails(myName, myId, langused, myEmail);

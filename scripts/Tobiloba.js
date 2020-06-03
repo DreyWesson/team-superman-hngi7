@@ -1,12 +1,12 @@
-const intro = [
-  'Fakorede Tobiloba',
-  'HNG-02655',
-  'JavaScript',
-  'fakoredetobiloba.ft@gmail.com',
-];
+const fullname = 'Fakorede Tobiloba';
+const hngID = 'HNG-02655';
+const language = 'JavaScript';
+const email = 'fakoredetobiloba.ft@gmail.com';
 
-console.log(
-  `Hello World, this is ${intro[0]} with HNGi7 ID ${intro[1]} using ${
-    intro[2]
-  } for stage 2 task.${intro[3]}`
-);
+function fullIntroduction(name, id, languageUsed, myEmail) {
+  console.log(
+    `Hello World, this is ${name} with HNGi7 ID ${id} using ${languageUsed} for stage 2 task.${myEmail}`
+  );
+}
+
+fullIntroduction(fullname, hngID, language, email);

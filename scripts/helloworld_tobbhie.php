@@ -1,10 +1,8 @@
 <?php
 //STOP commenting here
 
-$hello = "Hello World, this is Tobi Folajin with HNGi7 ID HNG-00811 using vanilla PHP for stage 2 task";
-$output= json_encode($hello);
+$hello = "Hello World, this is Tobi Folajin with HNGi7 ID HNG-00811 using PHP for stage 2 task";
+echo $hello;
 
-echo $output;
-
-return $output;
+return $hello;
 ?>

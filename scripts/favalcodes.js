@@ -4,5 +4,5 @@ let lang = "Javascript";
 let email = "favourvalg@gmail.com";
 
 console.log(
-    "Hello World, this is " + fullName + " with HNGi7 ID " + id + " using "+ lang +" for stage 2 task"
-    );
+    "Hello World, this is " + fullName + " with HNGi7 ID " + id + " using "+ lang +" for stage 2 task." + email
+  );

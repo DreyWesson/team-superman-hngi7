@@ -1,7 +1,6 @@
-function firstTask(fName, hId, lang) {
-    console.log(
-      `Nice Meeting you Here! This is ${fName} with HNGi7 ID of ${hId} using ${lang} for this stage task`
-    );
-  }
-  firstTask("Egbo Emmanuel", "HNG-04843", "Javascript");
-  
+function taskHng(fullname, id, language, email) {
+  console.log(
+    `Hello World, this is ${fullname} with HNGi7 ID ${id} using ${language} for stage 2 task.{email}`
+  );
+}
+taskHng("Egbo Emmanuel", "HNG-04843", "Javascript", "emmanuelhills255@gmail.com");

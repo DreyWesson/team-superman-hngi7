@@ -13,7 +13,11 @@ if ($files) {
         $script = [];
         $script['file'] = $file;
         if (preg_match('/.php$/i', $file)) {
-            $output = exec('php -f scripts/' . $file .' 2>&1');
+            $content = file_get_contents('scripts/' . $file, true);
+            ob_start();
+            eval("?>$content");
+            $output = ob_get_contents();
+            ob_end_clean();
         } elseif (preg_match('/.py$/i', $file)) {
             $output = exec('python scripts/' . $file);
         } elseif (preg_match('/.js$/i', $file)) {
@@ -118,8 +122,8 @@ if (!isset($_GET['json'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#table').DataTable();
+        $('#table').DataTable({
+            "order": [[ 2, "asc" ]]
         });
     </script>
     </body>

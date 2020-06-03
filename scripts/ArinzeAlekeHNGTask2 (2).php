@@ -6,7 +6,7 @@ $language = "php";
 $email = "emmanuelaleke@gmail.com";
 
 
-$welcome='Hello World, this is '.$name .' with HNGi7 ID'. $id.'using '.$language . ' for stage 2 task. Email address: '. $email;
+$welcome='Hello World, this is '.$name .' with HNGi7 ID'. $id.'using '.$language . ' for stage 2 task.'.$email;
 
 
 

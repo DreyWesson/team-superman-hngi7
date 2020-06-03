@@ -15,4 +15,3 @@ const micodeOutputProcessor = (name,hngid,lang) => {
 }
 
 micodeOutputProcessor(micode.name, micode.hngid,micode.language);
-// `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.`

@@ -1,6 +1,6 @@
 
 def task(name, hnd_id, email, lang):
-    print("Hello World, this is " + name + " with HNGi7 ID " + hnd_id + " email " + email + " using " + lang + " for stage 2 task")
+    print("Hello World, this is " + name + " with HNGi7 ID " + hnd_id + " using " + lang + " for stage 2 task.{}".format(email))
 
 
 if __name__ == "__main__":

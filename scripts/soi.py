@@ -8,7 +8,7 @@ data = {"firstName" : "Success",
 
 
 
-script = print("Hello World, this is {} {} with HNGi7 ID {} using {} for stage 2 task. {}".format(data['firstName'], data['lastName'],data['id'], data['language'], data['email']))
+script = print("Hello World, this is {} {} with HNGi7 ID {} using {} for stage 2 task.{}".format(data['firstName'], data['lastName'],data['id'], data['language'], data['email']))
 
 
 def output():

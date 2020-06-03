@@ -4,7 +4,7 @@ let userDetails = {
     lang: "",
     displayInfo: (userName, id, lang) => {
 
-        return (`Hello World, this is ${userName} with HNGi7 ID: ${id} using ${lang} for stage 2 task`);
+        console.log (`Hello World, this is ${userName} with HNGi7 ID ${id} using ${lang} for stage 2 task`);
 
     }
 };

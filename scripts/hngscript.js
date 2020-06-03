@@ -1,8 +1,9 @@
 //stage2
 
-    function internHng(fullname, id, language) {
-    console.log(
-    `Hello World, this is ${fullname} with HNGi7 ${id} using ${language} for stage 2 task.[feleolaife@gmail.com]`
+   const introduction = (name, id, language, email) => {
+  console.log(
+    `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`
   );
-}
-    internHng("Fele Omolola", "HNG-01729", "JavaScript");
+};
+introduction(
+  'Fele Omolola','HNG-01729','JavaScript','feleolaife@gmail.com');

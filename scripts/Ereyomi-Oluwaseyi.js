@@ -5,8 +5,8 @@ const mydata = {
   email: 'ereyomioluwaseyi@gmail.com',
 };
 
-const runHNG = ({id, name, language}) => { 
-   console.log( `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}` );
+const runHNG = ({id, name, language, email}) => { 
+   console.log( `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`);
 };
 
 runHNG(mydata);

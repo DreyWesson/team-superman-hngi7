@@ -9,4 +9,4 @@ data = {
     "email":"astongemmy@gmail.com",
 };
 
-logHNG(data.Name, data.ID, data.Language, data.Email);
+logHNG(data.name, data.ID, data.language, data.email);

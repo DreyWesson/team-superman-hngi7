@@ -1,10 +1,10 @@
 function davidAtilola(){
 
-    let welcome = 'Hello World';
-    let fullName = 'David Atilola';
-    let iD = 'HNG-01583'
-    let language = 'JavaScript';
+    const fullName = 'David Atilola';
+    const id = 'HNG-01583'
+    const language = 'JavaScript';
+    const email = 'atiloladavid1@gmail.com'
 
-    console.log (`${welcome}, this is ${fullName} with the HNGi7 ID ${iD} using ${language} for stage 2 task.`)
+    console.log(`Hello World, this is ${fullName} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`)
 }
 davidAtilola()

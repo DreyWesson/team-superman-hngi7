@@ -1,0 +1,1 @@
+console.log('Hello World, this is Okoro Kenneth Kesiena with HNGi7 ID HNG-04067 using Javascript for stage 2 task.Kennethokesiena@gmail.com');

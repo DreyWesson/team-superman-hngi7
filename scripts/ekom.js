@@ -1,0 +1,1 @@
+console.log('Hello World, this is Ekpo Ekom with HNGi7 ID HNG-05281 using Javascript for stage 2 task');

@@ -4,7 +4,7 @@ function data(){
     let language = 'JavaScript';
     let email = 'ajayimichael150@gmail.com';
     
-    const profile = 'Hello World, this is ' + fullName + ' with HNGi7 ID' + id + ' using ' + language + ' for stage 2 task';
+    const profile = 'Hello World, this is ' + fullName + ' with HNGi7 ID' + id + ' using ' + language + ' for stage 2 task' + email;
     
     console.log(profile);
 }

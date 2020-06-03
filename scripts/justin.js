@@ -7,7 +7,7 @@ const person = {
                 console.log("Hello World, this is "
                  + this.fullname + " with HNGI7 ID "
                   + this.HNGI7_id + " using " + this.language + 
-                  " for stage 2 task "
+                  " for stage 2 task. " + this.email
                   );
     }
 }

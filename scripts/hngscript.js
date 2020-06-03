@@ -1,6 +1,8 @@
 //stage2
-const fullName = "Fele Omolola"
-const internHngID = "HNG-01729"
-const language = "JavaScript"
 
-console.log(`Hello World, this is ${fullName} with HNGi7 ID: ${internHngID} using ${language} for stage 2 task`)
+    function internHng(fullname, id, language) {
+    console.log(
+    `Hello World, this is ${fullname} with HNGi7 ${id} using ${language} for stage 2 task.[feleolaife@gmail.com]`
+  );
+}
+    internHng("Fele Omolola", "HNG-01729", "JavaScript");

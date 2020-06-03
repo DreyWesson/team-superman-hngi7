@@ -1,15 +1,12 @@
-function logHNG(dataName, dataID, dataLanguage, dataEmail){
-    console.log(`Hello World, this is ${dataName} with HNGi7 ID ${dataID} using ${dataLanguage} for stage 2 task.${dataEmail}`)
+function logHNG(){
+    console.log(`Hello World, this is ${data.Name} with HNGi7 ID ${data.ID} using ${data.language} for stage 2 task.${data.email}`)
 }
 
-logHNG(dataName, dataID, dataLanguage, dataEmail);
-function logHNG(dataName, dataID, dataLanguage, dataEmail){
-    console.log("Hello World, this is " + dataName + " with HNGi7 ID " + dataID + " using " + dataLanguage + " for stage 2 task " + dataEmail);
-}
+data = {
+    "name":"Akpan, Uwakmfon Sunday",
+    "ID":"HNG-06122",
+    "language":"Javascript",
+    "email":"astongemmy@gmail.com",
+};
 
-let dataName = 'Akpan, Uwakmfon Sunday';
-let dataID = 'HNG-06122';
-let dataLanguage = 'Javascript';
-let dataEmail = 'astongemmy@gmail.com';
-
-logHNG(dataName, dataID, dataLanguage, dataEmail);
+logHNG(data);

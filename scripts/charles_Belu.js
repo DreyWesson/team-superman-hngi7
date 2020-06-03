@@ -2,7 +2,7 @@
 let userDetails = {
     userName: "",
     id: "",
-    email: "nwachebeluanthony@gmail.com",
+    email: "",
     lang: "",
     displayInfo: (userName, id, lang) => {
 

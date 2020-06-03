@@ -1,14 +1,15 @@
-# username: champ
-# name: peter onum
+# username: Champ
+# name: Peter Onum
 # id: HNG-00133
-# email:
+# email: onumdev@gmail.com
+# All this complication is just to make my code unique
 
 name = "Peter Onum"
 ID = "HNG-00133"
 language = "python"
 email = "onumdev@gmail.com"
 
-my_dict = {'name': name, 'identity': ID, 'dialect': language}
+my_dict = {'name': name, 'id': ID, 'language': language, 'email':email}
 
 
 def show_my_details(name, hng_id, language_input):
@@ -16,7 +17,4 @@ def show_my_details(name, hng_id, language_input):
 
 
 print(show_my_details(my_dict['name'],
-                      my_dict['identity'], my_dict['dialect']))
-
-
-quitter = input('Press enter to quit')
+                      my_dict['id'], my_dict['language']))

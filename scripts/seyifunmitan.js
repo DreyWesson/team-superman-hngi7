@@ -1,5 +1,7 @@
-let fullName = "Ademujimi oluwaseyi"
-let hngId = "HNG-00685"
-let language = "JavaScript"
 
-console.log(`Hello World, this is ${fullName} with HNGi7 ID: ${hngId} using ${language} for stage 2 task`)
+const introduce = () => {
+  let details = `Hello World, this is Ademujimi Oluwaseyi with HNGi7 ID HNG-00685 using javascript for stage 2 task. oluwaseyifunmitan5@gmail.com`
+  console.log(details)
+}
+
+introduce()

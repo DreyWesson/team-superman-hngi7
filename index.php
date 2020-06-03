@@ -23,10 +23,10 @@ if($files) {
                 echo 'Language: '.$result[4].'<br />';
                 echo 'Result: Passed, congrats!!!<br />';
             } else {
-                echo 'Result: Fail :(<br />';
+                echo 'Result: Fail !!!<br />';
             }
         } else {
-            echo 'Result: Fail :(<br />';
+            echo 'Result: Fail !!!<br />';
         }
 
         echo '<br /><br />';

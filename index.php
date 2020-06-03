@@ -37,7 +37,7 @@ if ($files) {
                 $script['language'] = "";
                 $script['status'] = 'Fail';
                 $script['email']='';
-                $script['output'] = '';
+                $script['output'] = substr($output,0,strpos($output,"."));
                 $fails++;
             }
 

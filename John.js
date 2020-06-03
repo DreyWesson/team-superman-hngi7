@@ -1,4 +1,3 @@
-
 let name = "Ajayi John";
 let id = "HNG-00374";
 let language = "JavaScript";

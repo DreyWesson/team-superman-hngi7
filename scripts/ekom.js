@@ -1,3 +1,4 @@
+//constructor
 function Info(name, id, email, language){
     this.yourName=name;
     this.yourId=id;

@@ -1,6 +1,8 @@
-function hello(){
-  
-  var text = "Hello World, this is Nenlep Ishaku with HNGi7 ID HNG-00471 using JavaScript for stage 2 task.nenlep12345@gmail.com";
+function task(){
+  var fname = "Nenlep Ishaku";
+  var hng_ID = "HNG-00471";
+  var email = "nenlep12345@gmail.com";
+  var text = `Hello World, this is ${fname} with HNGi7 ID ${hng_ID} using JavaScript for stage 2 task.${email}`;
   console.log(text);
 }
-hello();
+task();

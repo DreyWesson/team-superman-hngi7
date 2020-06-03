@@ -1,3 +1,4 @@
+let email = "farhansodiq360@gmail.com"
 function myDetails(Fullname, ID, Language){
     console.log(`Hello World, this is ${Fullname} with HNGi7 ID ${ID} using ${Language} for Stage 2 task`);
 }

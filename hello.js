@@ -1,4 +1,4 @@
-let fullName = "Tunde";
+let fullName = "Tunde Adebanjo";
 let id = "HNG-02925";
 let language = "javascript";
 

@@ -10,4 +10,5 @@ let userDetails = {
     }//function to output the object property values. 
 };
 let { userName,id,email,lang } = userDetails; //destructuring of object 
+email = "nwachebeluanthony@gmail.com"
 userDetails.displayInfo("Charles Nwachebelu", "HNG-04564","javaScript");

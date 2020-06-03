@@ -4,7 +4,7 @@ const myInfo = {
   fullName: function () {
     return this.firstName + " " + this.lastName;
   },
-  hngId: "02298",
+  hngId: "HNG-02298",
   language: "Javascript",
   email: "ngwucs@gmail.com",
 };
@@ -20,7 +20,5 @@ console.log(
     " " +
     myInfo.language +
     " " +
-    " for stage 2 task." +
-    " " +
-    myInfo.email
+    " for stage 2 task."
 );

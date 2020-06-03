@@ -6,6 +6,6 @@ const myemail = "ecolejnr007@gmail.com";
 
 
     console.log(
-        `Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.ecolejnr007@gmail.com`
+        `Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${myemail}`
         );
 

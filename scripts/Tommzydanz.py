@@ -2,10 +2,9 @@
 
 import sys
 
-
 	
 def intern_details(name, id, email, language):
-	print("Hello World, this is %s with HNGi7 ID %s using %s for stage 2 task.{}".format(email))% (name, id, language)
+	print("Hello World, this is " + name + " with HNGi7 ID " + id + " using " + language + " for stage 2 task.{}".format(email))
 	sys.stdout.flush()
 	
 

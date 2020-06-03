@@ -1,43 +1,36 @@
 <?php
-$files = array_filter(scandir('scripts'), function ($script) {
-    return !is_dir('scripts/' . $script);
-}); // To remove "." and  ".." from the array output os scabdir
-
-$final = [];
+$files = scandir('scripts');
 if ($files) {
-    foreach ($files as $file) {
-        $script = [];
-        $script['file'] = $file;
-        if (preg_match('/.php$/i', $file)) {
-            $output = exec('php -f scripts/' . $file .' 2>&1');
-        } elseif (preg_match('/.py$/i', $file)) {
-            $output = exec('python scripts/' . $file);
-        } elseif (preg_match('/.js$/i', $file)) {
-            $output = exec('node scripts/' . $file);
-        }
+  foreach ($files as $file) {
+    echo 'File: ' . $file . '<br />';
 
-        if (isset($output)) {
-            $result = [];
-            preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
-            if (count($result) > 0) {
-                $script['name'] = $result[1];
-                $script['id'] = $result[2];
-                $script['language'] = $result[4];
-                $script['status'] = 'Pass';
-                $script['email']= $result[5];
-                $script['output'] = substr($output,0,strpos($output,"."));
-            } else {
-                $script['name'] = "";
-                $script['id'] = "";
-                $script['language'] = "";
-                $script['status'] = 'Fail';
-                $script['email']='';
-                $script['output'] = '';
-            }
-
-            array_push($final, $script);
-        }
+    unset($output);
+    if (preg_match('/.php$/i', $file)) {
+      $output = exec('php scripts/' . $file);
+    } elseif (preg_match('/.py$/i', $file)) {
+      $output = exec('python scripts/' . $file);
+    } elseif (preg_match('/.js$/i', $file)) {
+      $output = exec('node scripts/' . $file);
     }
+
+    if (isset($output)) {
+      echo 'Output: ' . $output . '<br />';
+      $result =  [];
+      preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task(.|)$/i', $output, $result);
+      if (count($result) > 0) {
+        echo 'Name: ' . $result[1] . '<br />';
+        echo 'HNGi7 ID: ' . $result[2] . '<br />';
+        echo 'Language: ' . $result[4] . '<br />';
+        echo 'Result: Passed, congrats!!!<br />';
+      } else {
+        echo 'Result: Fail !!!<br />';
+      }
+    } else {
+      echo 'Result: Fail !!!<br />';
+    }
+
+    echo '<br /><br />';
+  }
 }
 
 if (!isset($_GET['json'])) {

@@ -15,21 +15,24 @@ if ($files) {
         } elseif (preg_match('/.js$/i', $file)) {
             $output = exec('node scripts/' . $file);
         }
-        $script['output'] = $output;
+
         if (isset($output)) {
-            $script['output'] = $output;
+            $mainOutput=substr($output,0,strpos($output,"."));
+            $script['output'] = $mainOutput;
             $result = [];
-            preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task(.|)$/i', $output, $result);
+            preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task(.|)$/i', $mainOutput, $result);
             if (count($result) > 0) {
                 $script['name'] = $result[1];
                 $script['id'] = $result[2];
                 $script['language'] = $result[4];
                 $script['status'] = 'Pass';
+                $script['email']=substr($output,strpos($output,".")+1);
             } else {
                 $script['name'] = "";
                 $script['id'] = "";
                 $script['language'] = "";
                 $script['status'] = 'Fail';
+                $script['email']='';
             }
 
             array_push($final, $script);

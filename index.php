@@ -9,13 +9,13 @@ if ($files) {
         $script = [];
         $script['file'] = $file;
         if (preg_match('/.php$/i', $file)) {
-            $output = exec('php scripts/' . $file);
+            $output = exec('php -f scripts/' . $file .' 2>&1');
         } elseif (preg_match('/.py$/i', $file)) {
             $output = exec('python scripts/' . $file);
         } elseif (preg_match('/.js$/i', $file)) {
             $output = exec('node scripts/' . $file);
         }
-
+        $script['output'] = $output;
         if (isset($output)) {
             $script['output'] = $output;
             $result = [];

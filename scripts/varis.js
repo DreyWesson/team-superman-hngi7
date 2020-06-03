@@ -1,1 +1,2 @@
-console.log("Hello world, this is Varis Gkonyo Mwaniki with HNGi7 ID U0144BE7CTH  using JavaScript for stage2 task")
+const salamu ="Hello World, this is Varis Gikonyo Mwaniki with HNGi7 ID HNG-03436 using JavaScript for stage 2 task.levanvaris@gmail.com";
+console.log(salamu);

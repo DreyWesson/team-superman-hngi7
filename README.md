@@ -15,4 +15,8 @@
 
 ## 6. Save your file with a UNIQUE name. your username should be unique enough.
 
+# RESULTS SO FAR
+
+[Result page](https://ndubuisijr.github.io/superman-results) 
+
 Your DESTINY is in your hands o...

@@ -1,5 +1,12 @@
-function Task2(Name, HNGi7ID, Email, Language) 
-	{
-  console.log(`Hello World, this is ${Name} with HNGi7 ID ${HNGi7ID} using ${language} for stage 2 task.${Email}`)
-	}
-Task2("Oluwatobi Olowu", "HNG-02668", "Javascript", "tobytokpe@gmail.com");
+<?php
+
+$Name = "Oluwatobi Olowu";
+$ID = "HNG-02668";
+$Language = "PHP ";
+$Email = "Tobytokpe@gmail.com";
+
+$Task = "Hello World, this is " . $Name . " with HNGi7 ID " . $ID . " using " . $Language . "for stage 2 task." .$Email ;
+
+echo $Task;
+
+?>

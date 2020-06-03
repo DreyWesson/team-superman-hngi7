@@ -9,3 +9,9 @@ function myInfo() {
 }
 
 myInfo();
+
+//function myDetails(fullname, ID, language){
+//    console.log(`Hello World, this is ${fullname} with HNGi7 ID ${ID} using ${language} for Stage 2 task`);
+//}
+
+//myDetails("Sodiq Farihan", "HNG-03238", "JavaScript");

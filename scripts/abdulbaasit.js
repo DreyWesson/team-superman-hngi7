@@ -1,5 +1,5 @@
-const hngDetails = (name, id, lang) => {
-    console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task`);
+const hngDetails = (name, id, lang, email) => {
+    console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${lang}  and ${email} for stage 2 task`);
 }
  
-hngDetails("Abdulbaasit Seriki", "HNG-05764" , "JavaScript");
+hngDetails("Abdulbaasit Seriki", "HNG-05764" , "JavaScript", "baasisek01@gmail.com");

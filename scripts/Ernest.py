@@ -4,7 +4,7 @@ email = "owojori.tolulope@gmail.com"
 language = "Python"
 
 def task(Name, hng_id, language, email):
-    output = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task. {}".format(Name, hng_id,language, email)
+    output = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}".format(Name, hng_id,language, email)
     return output
 
 

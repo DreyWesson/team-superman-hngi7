@@ -9,7 +9,7 @@ const greetings = (myName,myId, myStackLanguage) =>{
 }
 
 const data = new myDetails(userName, userId, userlanguage);
-sayHelloToHNG(intern.DevName, intern.hngId, intern.language);
+greetings(data.userName, data.userId, data.userLanguage);
 
 
 const  userName='Enock Omondi Otuoma';

@@ -6,7 +6,6 @@ const internDetails = {
     email: "ogunleyeolamide01@gmail.com"
 }
 
-console.log(internDetails)
 fullName = internDetails.fullName;
 id = internDetails.ID;
 language = internDetails.language;

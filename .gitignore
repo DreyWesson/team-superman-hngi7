@@ -89,4 +89,5 @@ sw.*
 # Vim swap files
 *.swp
 
+.vscode
 vendor

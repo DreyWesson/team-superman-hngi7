@@ -1,8 +1,6 @@
-def introduction(name, ID, Email, language):
-    result = "Hello world, this is {} HNGi7 ID {} and email {} using {} for stage 2 task"
-    return (result.format(name, ID, Email, language))
-
-
+def introduction(name, ID, language, Email):
+    result = "Hello world, this is {} HNGi7 {}, using {} for stage 2 task. {}."
+    return (result.format(name, ID, language, Email))
 message = introduction("Ogunsipe Oladolapo", "HNG-00590",
-                       "dolapoogunsipe@gmail.com", "python")
+                       "python", "dolapoogunsipe@gmail.com")
 print(message)

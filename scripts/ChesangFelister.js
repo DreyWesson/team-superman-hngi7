@@ -1,5 +1,5 @@
 var MyName = "Chesang Felister";
-var IdNo = "INTERNSHIP ID: HNG-01293";
+var IdNo = "HNG-01293";
 var Email = "chesangfelister@gmail.com";
 var Language = "JavaScript";
 

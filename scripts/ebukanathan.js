@@ -3,9 +3,9 @@ function intern(name,no,language,email) {
     this.id = no;
     this.language = language;
     this.email = email;
-    console.log(`Hello World, this is ${this.fullname} with HNGi7 ID ${this.id} using ${this.language} for stage 2 task`);
+    console.log(`Hello World, this is ${this.fullname} with HNGi7 ID ${this.id} using ${this.language} for stage 2 task.${this.email}`);
     
 };
 
-intern("ebuka Nathan","HNG-02719","Javascript")
+intern("Ebuka Nathan","HNG-02719","Javascript","ebukanathan@gmail.com")
 

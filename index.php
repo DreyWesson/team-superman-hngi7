@@ -4,24 +4,19 @@ $passes = 0;
 $fails = 0;
 if (!isset($_GET['json'])) {
 ?>
-  <!DOCTYPE html>
-  <html lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Team Superman- Task 2</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
   </head>
-
   <body>
     <!-- styles -->
     <style>
@@ -38,17 +33,6 @@ if (!isset($_GET['json'])) {
 
       main {
         margin-bottom: 20px;
-      }
-
-      .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-      .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-        color: white;
-        background: lightblue;
-        border-radius: 50%
-      }
-
-      .dataTables_wrapper .dataTables_paginate .paginate_button {
-        border-radius: 50%
       }
 
       @media only screen and (max-width: 760px),
@@ -126,12 +110,6 @@ if (!isset($_GET['json'])) {
         td:nth-of-type(6):before {
           content: "ID";
         }
-
-        .dataTables_length label,
-        .dataTables_filter label {
-          text-align: left;
-          float: left
-        }
       }
     </style>
     <!-- Navigation -->
@@ -147,6 +125,11 @@ if (!isset($_GET['json'])) {
         <h4 class="border-bottom border-gray pb-2 mb-0 text-center">
           Scripts Results
         </h4>
+        <div class='text-center heading mt-2'>
+          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <div id="submitted"></div></span>
+          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <div id="passes"></div></span>
+          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <div id="fails"></div></span>
+        </div>
       </div>
       <table id="table" class="table table-hover table-sm table-bordered">
         <thead class="thead-dark">
@@ -166,7 +149,7 @@ if (!isset($_GET['json'])) {
             return !is_dir('scripts/' . $script);
           }); // To remove "." and  ".." from the array output os scabdir
           
-          foreach ($files as $file) { 
+          foreach ($files as $file) {
                 $submitted++;
                 $name = "";
                 $id = "";
@@ -204,35 +187,41 @@ if (!isset($_GET['json'])) {
                     $output = substr($output, 0, strpos($output, "."));
                     $fails++;
                   }
+                } else {
+                  $name = "";
+                  $id = "";
+                  $status = 'Fail';
+                  $email = '';
+                  $output = $output;
+                  $fails++;
                 }
             ?>
             <tr id="table-row" <?= $status == 'Pass' ? 'class="table-success"' : 'class="table-danger"' ?>>
-              <td><?= $status == 'Pass' ? '<span class="badge badge-success">Pass</span>' : '<span class="badge badge-danger">Fail</span>' ?></td>
-              <td><?= $output ?></td>
-              <td><?= $file ?></td>
-              <td><?= $name ?></td>
-              <td><?= $email ?></td>
-              <td><?= $language ?></td>
-              <td><?= $id ?></td>
+              <td><?php echo $status == 'Pass' ? '<span class="badge badge-success">Pass</span>' : '<span class="badge badge-danger">Fail</span>' ?></td>
+              <td><?php echo $output ?></td>
+              <td><?php echo $file ?></td>
+              <td><?php echo $name ?></td>
+              <td><?php echo $email ?></td>
+              <td><?php echo $language ?></td>
+              <td>
+                <?php echo $id ?>
+                <script>
+                  document.getElementById("submitted").innerHTML = <?php echo $submitted ?>;
+                  document.getElementById("passes").innerHTML = <?php echo $passes ?>;
+                  document.getElementById("fails").innerHTML = <?php echo $fails ?>;
+                </script>
+              </td>
             </tr>
           <?php } ?>
         </tbody>
       </table>
-      <div class='text-center heading mt-2'>
-          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <?php echo $submitted ?></span>
-          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <?php echo $passes ?></span>
-          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
-        </div>
     </main>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-
   </body>
-
-  </html>
+</html>
 <?php
 } else {
   header('Content-Type: application/json');  // <-- header declaration

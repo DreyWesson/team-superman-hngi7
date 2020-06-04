@@ -1,7 +1,7 @@
 <?php
 
 // Declaring the constant variables
-$name="Sosu Alfred";
+$name="Sosu Alfred Kwame";
 $email="sosualfred@gmail.com";
 
 // HNG ID

@@ -1,3 +1,10 @@
 {
-
+  "name": "team-superman-hngi7",
+  "type": "project",
+  "description": "team-superman-hngi7",
+  "license": "MIT",
+  "require-dev": {},
+  "require": {
+    "php": "^7.4"
+  }
 }

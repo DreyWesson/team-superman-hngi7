@@ -13,13 +13,13 @@ if ($files) {
     $script = [];
     $script['file'] = $file;
     if (preg_match('/.php$/i', $file)) {
-      $output = exec('php -f scripts/' . $file . ' 2>&1');
+      $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
         $script['language'] = "PHP";
     } elseif (preg_match('/.py$/i', $file)) {
-      $output = exec('python scripts/' . $file. ' 2>&1');
+      $output = shell_exec('python scripts/' . $file. ' 2>&1');
         $script['language'] = "Python";
     } elseif (preg_match('/.js$/i', $file)) {
-      $output = exec('node scripts/' . $file. ' 2>&1');
+      $output = shell_exec('node scripts/' . $file. ' 2>&1');
         $script['language'] = "Javascript";
     }else{
         $script['language'] = "Null";

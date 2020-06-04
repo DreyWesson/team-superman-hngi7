@@ -1,13 +1,11 @@
 <?php
 
+ //function to desplay intern detials
+ function intern($name, $id, $pro_lang, $email)
+ {
+     return "Hello World, this is ".$name. " with HNGi7 id ".$id. " using ".$pro_lang." for stage 2 task.".$email;
+ }
 
-//function to generate HNGi7 user id values 
-function identity_generator($name, $id, $language)
-{
-    return "Hello World, this is ".$name." with HNGi7 ID ".$id." using ".$language." for stage 2 task.";
-}
+ $output = intern("Chidubem Nwankwo", "HNG-00366","PHP","Dubem360@gmail.com");
 
-$output = identity_generator("Chidubem Nwankwo","00366","PHP");
-
-
-?>
+ echo $output;

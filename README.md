@@ -8,7 +8,7 @@
 ### for python - print(), 
 ### for php - echo.
  
-## 3. Use this EXACT string format - "Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task". Do not add colon ( : ), Dash (-) or any other character. 
+## 3. Use this EXACT string format - "Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task.[Email]". Do not add colon ( : ), Dash (-) or any other character. 
 ## 4. Replace everything inside the square brackets including the square brackets, with the correct values. 
 
 ## 5. I REPEAT DO NOT ADD ANY OTHER CHARACTER TO IT, JUST REPLACE THE APPROPRIATE VALUES.

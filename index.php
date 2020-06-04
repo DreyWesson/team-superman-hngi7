@@ -104,10 +104,14 @@ if (!isset($_GET['json'])) {
         }
 
         td:nth-of-type(5):before {
-          content: "Language";
+          content: "Email";
         }
 
         td:nth-of-type(6):before {
+          content: "Language";
+        }
+
+        td:nth-of-type(7):before {
           content: "ID";
         }
       }

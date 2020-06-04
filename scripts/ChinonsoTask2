@@ -20,5 +20,5 @@ console.log(
     " " +
     myInfo.language +
     " " +
-    " for stage 2 task."
+    " for stage 2 task."+myInfo.email
 );

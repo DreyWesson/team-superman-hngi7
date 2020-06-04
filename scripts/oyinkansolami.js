@@ -1,6 +1,6 @@
 const myDetails = [
     FULLNAME = "Oluwatomi Oyinkansolami Atansuyi",
-    ID = " HNG-01218 ",
+    ID = "HNG-01218",
     LANGUAGE = 'Javascript',
     EMAIL = 'tomisinatansuyi@gmail.com'
 ];

@@ -1,3 +1,2 @@
-#this program will take input and format it
-print ("Hello world,this is %s with %s  using %s for stage task 2.%s " %("oluwapelumi oni","HNG-04612","Python","onioluwapelumi2014@gmail.com"))
-
+print("Hello world,this is {0} with {1}  using {2}  for stage task 2.{3} ".format(
+    "oluwapelumi oni", "HNG-04612", "Python", "onioluwapelumi2014@gmail.com"))

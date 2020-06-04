@@ -3,7 +3,8 @@
 #stage 2
 def myself():
     myName = 'Abideen Muhammed'
-    ID = 'HNG-02878'
+    myID = 'HNG-02878'
+    lang = 'python'
     myEmail ='abideenmuhammed2018@gmail.com'
-    print("Hello World,this is", myName+"." + "My HNGi7 ID is", ID+"." + "I am using Python for stage 2 task"+"."+myEmail)
+    print("Hello World,this is", myName+"." + "My HNGi7 ID is", myID+"." + "I am using" +" "+ lang +" "+ "for stage 2 task"+"."+myEmail)
 myself()

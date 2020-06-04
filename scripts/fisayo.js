@@ -1,11 +1,2 @@
-let name = "Fisayo Adesomoju";
-let id = "HNG-01794";
-let email = "adesomojufisayo@gmail.com";
-let pLang = "JavaScript";
-
-function task2() {
-    let result = "Hello World, this is " + name + " with HNGi7 ID " + id + " using " + pLang + " for stage 2 task. " + email;
-    console.log(result);
-}
-
-task2();
+//task2
+console.log("Hello World, this is Fisayo Adesomoju with HNGi7 ID HNG-01794 using Javascript for stage 2 task.adesomojufisayo@gmail.com");

@@ -1,4 +1,4 @@
-const data = [
+ const data = [
     "Aiyegbusi omotola",
     "HNG-00564",
     "Javascript",

@@ -1,10 +1,11 @@
 {
-  "name": "team-superman-hngi7",
+  "name": "hng17/superman",
   "type": "project",
   "description": "team-superman-hngi7",
   "license": "MIT",
   "require-dev": {},
   "require": {
-    "php": "^7.4"
+    "php": "^7.4",
+    "ext-json": "*"
   }
 }

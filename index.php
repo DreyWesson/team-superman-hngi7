@@ -93,6 +93,7 @@ if (!isset($_GET['json'])) {
                     <th>Name</th>
                     <th>Language</th>
                     <th>ID</th>
+                    <th>Email</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -104,6 +105,7 @@ if (!isset($_GET['json'])) {
                         <td><?=$script['name']?></td>
                         <td><?=$script['language']?></td>
                         <td><?=$script['id']?></td>
+                        <td><?= ltrim($script['email'], ".") ?></td>
 
                     </tr>
                 <?php } ?>

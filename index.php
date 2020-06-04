@@ -147,11 +147,6 @@ if (!isset($_GET['json'])) {
         <h4 class="border-bottom border-gray pb-2 mb-0 text-center">
           Scripts Results
         </h4>
-        <div class='text-center heading mt-2'>
-          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <?php echo $submitted ?></span>
-          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <?php echo $passes ?></span>
-          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
-        </div>
       </div>
       <table id="table" class="table table-hover table-sm table-bordered">
         <thead class="thead-dark">
@@ -223,6 +218,11 @@ if (!isset($_GET['json'])) {
           <?php } ?>
         </tbody>
       </table>
+      <div class='text-center heading mt-2'>
+          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <?php echo $submitted ?></span>
+          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <?php echo $passes ?></span>
+          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
+        </div>
     </main>
 
     <!-- Bootstrap core JavaScript -->

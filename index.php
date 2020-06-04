@@ -14,10 +14,15 @@ if ($files) {
     $script['file'] = $file;
     if (preg_match('/.php$/i', $file)) {
       $output = exec('php -f scripts/' . $file . ' 2>&1');
+        $script['language'] = "PHP";
     } elseif (preg_match('/.py$/i', $file)) {
       $output = exec('python scripts/' . $file);
+        $script['language'] = "Python";
     } elseif (preg_match('/.js$/i', $file)) {
       $output = exec('node scripts/' . $file);
+        $script['language'] = "Javascript";
+    }else{
+        $script['language'] = "Null";
     }
 
     if (isset($output)) {
@@ -26,7 +31,6 @@ if ($files) {
       if (count($result) > 0) {
         $script['name'] = $result[1];
         $script['id'] = $result[2];
-        $script['language'] = $result[4];
         $script['status'] = 'Pass';
         $script['email'] = $result[5];
         $script['output'] = substr($output, 0, strpos($output, "."));
@@ -34,7 +38,6 @@ if ($files) {
       } else {
         $script['name'] = "";
         $script['id'] = "";
-        $script['language'] = "";
         $script['status'] = 'Fail';
         $script['email'] = '';
         $script['output'] = substr($output, 0, strpos($output, "."));

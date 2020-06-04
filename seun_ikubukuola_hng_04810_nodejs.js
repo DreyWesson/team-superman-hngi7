@@ -4,7 +4,7 @@ let language = "NodeJs";
 let email = "stchawenzy1405@gmail.com";
 
 function myDetails() {
-    let displayInfo = "Hello World, this is " + name + " with " + id + " using " + language + " for stage 2 task. My email is "+ email;
+    let displayInfo = "Hello World, this is " + name + " with " + id + " using " + language + " for stage 2 task."+ email;
     console.log(displayInfo);
 }
 myDetails();

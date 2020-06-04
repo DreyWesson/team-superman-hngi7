@@ -1,4 +1,3 @@
-//task 2 script
 
 var fullName = "Godspower Agofure";
 var idNo = "HNG-06251";
@@ -10,3 +9,4 @@ function hngIntern(name, id, lang, mail) {
   );
 }
 hngIntern(fullName, idNo, language, email);
+

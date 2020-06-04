@@ -2,16 +2,15 @@
 
 import sys
 
+introduction = "Hello World, this is %s with HNGi7 ID %s using %s for stage 2 task.%s"%("Daniel Tomiwa", "HNG-02027", "Python", "daniela.stomiwa@yahoo.com")
+
+def intern_details():
+	return introduction
 	
-def intern_details(name, id, email, language):
-	print("Hello World, this is " + name + " with HNGi7 ID " + id + " using " + language + " for stage 2 task.{}".format(email))
-	sys.stdout.flush()
 	
 
-name = "Daniel Tomiwa" 
-id = "HNG-02027"
-language = "Python" 
-email = "daniela.stomiwa@yahoo.com"	
 
 if __name__ == "__main__":
-	intern_details(name, id, email, language)
+	print(intern_details())
+
+sys.stdout.flush()  

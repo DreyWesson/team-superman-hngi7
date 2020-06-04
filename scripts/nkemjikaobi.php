@@ -9,6 +9,7 @@ $language = 'PHP';
 $email = 'nkemjikaobi@gmail.com';
 
 //Display the output
-echo 'Hello World, this is '.$name.' with HNGi7 ID ' .$id.' using '.$language.' for stage 2 task'.' . '.$email;
+//echo 'Hello World, this is '.$name.' with HNGi7 ID ' .$id.' using '.$language.' for stage 2 task'.' . '.$email;
+echo "Hello World, this is $name with HNGi7 ID $id using $language for stage 2 task.$email";
 
 ?>

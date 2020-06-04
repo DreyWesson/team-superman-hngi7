@@ -1,13 +1,4 @@
+const JegedeDavidHngDetails = (name, id, lang) =>
+  `Hello World.\n This is ${name},\n with HNGi7 ID ${id},\n using ${lang} for stage two task`;
 
-function hngdavid() {
-
-    let name = `Jegede David `;
-    let id = `HNG-05938`;
-    let lang = `JavaScript`;
-    let email = `davidstick766@gmail.com`;
-
-    let message = `Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${email}`;
-    console.log(message);
-}
-
-hngdavid();
+console.log(JegedeDavidHngDetails("Jegede David", "HNG-05938", "JavaScript"));

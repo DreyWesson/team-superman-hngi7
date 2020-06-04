@@ -16,10 +16,10 @@ if ($files) {
       $output = exec('php -f scripts/' . $file . ' 2>&1');
         $script['language'] = "PHP";
     } elseif (preg_match('/.py$/i', $file)) {
-      $output = exec('python scripts/' . $file);
+      $output = exec('python scripts/' . $file. ' 2>&1');
         $script['language'] = "Python";
     } elseif (preg_match('/.js$/i', $file)) {
-      $output = exec('node scripts/' . $file);
+      $output = exec('node scripts/' . $file. ' 2>&1');
         $script['language'] = "Javascript";
     }else{
         $script['language'] = "Null";

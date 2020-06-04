@@ -1,6 +1,10 @@
-let full_name = "Seun Ikubukuola";
-let identity = "HNG-04810";
-let lang = "NodeJs";
+let name = "Seun Ikubukuola";
+let id = "HNG-04810";
+let language = "NodeJs";
 let email = "stchawenzy1405@gmail.com";
 
-console.log("Hello World, this is " + full_name + " with " + identity + " using " + lang + " for stage 2 task."+email );
+function myDetails() {
+    let displayInfo = "Hello World, this is " + name + " with " + id + " using " + language + " for stage 2 task. My email is "+ email;
+    console.log(displayInfo);
+}
+myDetails();

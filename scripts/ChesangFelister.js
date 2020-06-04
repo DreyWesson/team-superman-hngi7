@@ -1,17 +1,17 @@
 var MyName = "Chesang Felister";
 var IdNo = "HNG-01293";
-var Email = "chesangfelister@gmail.com";
 var Language = "JavaScript";
+var Email = "chesangfelister@gmail.com";
+
 
 function displayMessage(MyName, IdNo, Language, Email) {
   console.log(
     "Hello World, this is " +
-      MyName +
+      MyName + " with HNGi7 ID "+
       IdNo +
-      " i am using " +
+      " using " +
       Language +
-      " for stage 2 task. " +
-      "My  email" +
+      " for stage 2 task." +
       Email
   );
 }

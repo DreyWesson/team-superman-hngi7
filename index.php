@@ -65,7 +65,6 @@ if (!isset($_GET['json'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
   </head>
 
@@ -85,17 +84,6 @@ if (!isset($_GET['json'])) {
 
       main {
         margin-bottom: 20px;
-      }
-
-      .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-      .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-        color: white;
-        background: lightblue;
-        border-radius: 50%
-      }
-
-      .dataTables_wrapper .dataTables_paginate .paginate_button {
-        border-radius: 50%
       }
 
       @media only screen and (max-width: 760px),
@@ -173,12 +161,6 @@ if (!isset($_GET['json'])) {
         td:nth-of-type(6):before {
           content: "ID";
         }
-
-        .dataTables_length label,
-        .dataTables_filter label {
-          text-align: left;
-          float: left
-        }
       }
     </style>
     <!-- Navigation -->
@@ -200,7 +182,7 @@ if (!isset($_GET['json'])) {
           <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
         </div>
       </div>
-      <table id="table" class="table table-hover table-sm table-bordered">
+      <table class="table table-hover table-sm table-bordered">
         <thead class="thead-dark">
           <tr>
             <th>Status</th>
@@ -229,13 +211,6 @@ if (!isset($_GET['json'])) {
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#table').DataTable();
-      });
-    </script>
-
   </body>
 
   </html>

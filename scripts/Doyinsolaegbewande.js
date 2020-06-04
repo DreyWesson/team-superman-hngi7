@@ -8,4 +8,4 @@ function doyinsola_helloworld(name, iD, lang, mail){
     //input data
     console.log("Hello World, this is " + name + " with HNGi7 ID " + iD + " using " + lang +" for stage 2 task."+ mail);  
 }
-doyinsola_helloworld(fullName, idHNG, usedLanguage, email);
+doyinsola_helloworld(fullName, idHNG, usedLanguage, email)

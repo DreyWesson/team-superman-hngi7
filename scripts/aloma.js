@@ -6,4 +6,3 @@ function introduction(myName, myHngId, myProgrammingLanguage, myEmail) {
 }
 
 introduction("Adeyemi idris oladayo", "HNG-03260", "Javascript", "drizlad@gmail.com");
-console.log(introduction)

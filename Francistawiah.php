@@ -1,22 +1,9 @@
 <?php
 
-	$username = "FRANCIS TAWIAH";
-	$intern_id = "HNG-01722";
-	$language  = "PHP";
+	
+	$message = "Hello World, this is Francis Tawiah with HNGi7 ID HNG-01722 using Php for stage 2 task. tawiahfrancis13@gmail.com";
 
-
-	if($username == 'FRANCIS TAWIAH' && $intern_id == 'HNG-01722' && $language == 'PHP')
-	{
-		$message = "Hello World, this is ".$username." with HNi7 ID ".$intern_id."  using ".$language." for stage 2 task.";
-		$read_message = json_encode($message);
-
-		echo $read_message;
-	}
-
-	else
-	{
-		echo "Username does not exist";
-
-	}
-
+	echo $message;
+	
+	
 ?>

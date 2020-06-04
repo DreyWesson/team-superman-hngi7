@@ -1,6 +1,6 @@
 const mydata = {
   id: 'HNG-01457',
-  name: 'Ereyomi',
+  name: 'Ereyomi Oluwaseyi',
   language: 'JavaScript',
   email: 'ereyomioluwaseyi@gmail.com',
 };

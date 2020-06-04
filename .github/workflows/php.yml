@@ -30,8 +30,7 @@ jobs:
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
-      - name: Merge pull requests
-        uses: pascalgn/automerge-action@v0.8.3
+
 
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"

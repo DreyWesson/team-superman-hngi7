@@ -1,7 +1,13 @@
-function HngIntern(fullname, id, email, language) {
+var fullName = "Godspower Agofure";
+var idNo = "HNG-06251";
+var language = "JavaScript";
+var email = "godspower.agofure@gmail.com";
+
+function hngIntern(name, id, lang, mail) {
   console.log(
-    `Hello World, this is ${fullname} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`
+    "Hello World, this is " + name + " with HNGi7 ID " + id + " using " + lang + " for stage 2 task." + mail
   );
 }
 
-HngIntern("Godspower Agofure","HNG-06251","godspower.agofure@gmail.com", "Javascript");
+hngIntern(fullName, idNo, language, email);
+

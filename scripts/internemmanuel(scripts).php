@@ -7,6 +7,12 @@
     *have many unique solutions           *
   */
 
-  $output = 'Hello World, this is Emmanuel Menyaga with HNGi7 ID HNG-02898 using PHP for stage 2 task.sparklinsparky@gmail.com';
+//defie constants
+define("NAME", "Emmanuel Menyaga");
+define("ID", "HNG-02898");
+define("LANGUAGE","PHP");
+define("EMAIL", "sparklinsparky@gmail.com");
 
-  echo $output;
+//printing out 
+
+echo "Hello World, this is ".NAME." with HNGi7 ID ".ID." using ".LANGUAGE." for stage 2 task.".EMAIL."";

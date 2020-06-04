@@ -1,11 +1,19 @@
-let MyName = "Chesang Felister";
-let IdNo = "INTERNSHIP ID: HNG-01293";
-let Email = "chesangfelister@gmail.com";
-let Language = "JavaScript";
+var MyName = "Chesang Felister";
+var IdNo = "INTERNSHIP ID: HNG-01293";
+var Email = "chesangfelister@gmail.com";
+var Language = "JavaScript";
 
-function displayMessage() {
-let Message = "Hello World, this is " + "  "+ MyName +" "+ id +"  "+ "using " + language + " "+"for stage 2 task. " + "My  email"+" "+  email;
-console.log(Message);
+function displayMessage(MyName, IdNo, Language, Email) {
+  console.log(
+    "Hello World, this is " +
+      MyName +
+      IdNo +
+      " i am using " +
+      Language +
+      " for stage 2 task. " +
+      "My  email" +
+      Email
+  );
 }
 
-displayMessage();
+displayMessage(MyName, IdNo, Language, Email);

@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-#HNGi7
-#stage 2
 myName = 'Abideen Muhammed'
 myID = 'HNG-02878'
 lang = 'python'

@@ -1,54 +1,7 @@
 <?php
-$files = array_filter(scandir('scripts'), function ($script) {
-  return !is_dir('scripts/' . $script);
-}); // To remove "." and  ".." from the array output os scabdir
-
-$final = [];
-if ($files) {
-  $submitted = 0;
-  $passes = 0;
-  $fails = 0;
-  foreach ($files as $file) {
-    $submitted++;
-    $script = [];
-    $script['file'] = $file;
-    if (preg_match('/.php$/i', $file)) {
-      $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
-        $script['language'] = "PHP";
-    } elseif (preg_match('/.py$/i', $file)) {
-      $output = shell_exec('python scripts/' . $file. ' 2>&1');
-        $script['language'] = "Python";
-    } elseif (preg_match('/.js$/i', $file)) {
-      $output = shell_exec('node scripts/' . $file. ' 2>&1');
-        $script['language'] = "Javascript";
-    }else{
-        $script['language'] = "Null";
-    }
-
-    if (isset($output)) {
-      $result = [];
-      preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
-      if (count($result) > 0) {
-        $script['name'] = $result[1];
-        $script['id'] = $result[2];
-        $script['status'] = 'Pass';
-        $script['email'] = $result[5];
-        $script['output'] = substr($output, 0, strpos($output, "."));
-        $passes++;
-      } else {
-        $script['name'] = "";
-        $script['id'] = "";
-        $script['status'] = 'Fail';
-        $script['email'] = '';
-        $script['output'] = substr($output, 0, strpos($output, "."));
-        $fails++;
-      }
-
-      array_push($final, $script);
-    }
-  }
-}
-
+$submitted = 0;
+$passes = 0;
+$fails = 0;
 if (!isset($_GET['json'])) {
 ?>
   <!DOCTYPE html>
@@ -65,6 +18,7 @@ if (!isset($_GET['json'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
   </head>
 
@@ -84,6 +38,17 @@ if (!isset($_GET['json'])) {
 
       main {
         margin-bottom: 20px;
+      }
+
+      .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+      .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: white;
+        background: lightblue;
+        border-radius: 50%
+      }
+
+      .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border-radius: 50%
       }
 
       @media only screen and (max-width: 760px),
@@ -161,6 +126,12 @@ if (!isset($_GET['json'])) {
         td:nth-of-type(6):before {
           content: "ID";
         }
+
+        .dataTables_length label,
+        .dataTables_filter label {
+          text-align: left;
+          float: left
+        }
       }
     </style>
     <!-- Navigation -->
@@ -182,26 +153,72 @@ if (!isset($_GET['json'])) {
           <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
         </div>
       </div>
-      <table class="table table-hover table-sm table-bordered">
+      <table id="table" class="table table-hover table-sm table-bordered">
         <thead class="thead-dark">
           <tr>
             <th>Status</th>
             <th>Output</th>
             <th>File Name</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Language</th>
             <th>ID</th>
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($final as $script) { ?>
-            <tr id="table-row" <?= $script['status'] == 'Pass' ? 'class="table-success"' : 'class="table-danger"' ?>>
-              <td><?= $script['status'] == 'Pass' ? '<span class="badge badge-success">Pass</span>' : '<span class="badge badge-danger">Fail</span>' ?></td>
-              <td><?= $script['output'] ?></td>
-              <td><?= $script['file'] ?></td>
-              <td><?= $script['name'] ?></td>
-              <td><?= $script['language'] ?></td>
-              <td><?= $script['id'] ?></td>
+          <?php 
+          $files = array_filter(scandir('scripts'), function ($script) {
+            return !is_dir('scripts/' . $script);
+          }); // To remove "." and  ".." from the array output os scabdir
+          
+          foreach ($files as $file) { 
+                $submitted++;
+                $name = "";
+                $id = "";
+                $status = 'Fail';
+                $email = '';
+                $output = '';
+                if (preg_match('/.php$/i', $file)) {
+                  $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
+                    $language = "PHP";
+                } elseif (preg_match('/.py$/i', $file)) {
+                  $output = shell_exec('python scripts/' . $file. ' 2>&1');
+                  $language = "Python";
+                } elseif (preg_match('/.js$/i', $file)) {
+                  $output = shell_exec('node scripts/' . $file. ' 2>&1');
+                  $language = "Javascript";
+                }else{
+                  $language = "Null";
+                }
+            
+                if (isset($output)) {
+                  $result = [];
+                  preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
+                  if (count($result) > 0) {
+                    $name = $result[1];
+                    $id = $result[2];
+                    $status = 'Pass';
+                    $email = $result[5];
+                    $output = substr($output, 0, strpos($output, "."));
+                    $passes++;
+                  } else {
+                    $name = "";
+                    $id = "";
+                    $status = 'Fail';
+                    $email = '';
+                    $output = substr($output, 0, strpos($output, "."));
+                    $fails++;
+                  }
+                }
+            ?>
+            <tr id="table-row" <?= $status == 'Pass' ? 'class="table-success"' : 'class="table-danger"' ?>>
+              <td><?= $status == 'Pass' ? '<span class="badge badge-success">Pass</span>' : '<span class="badge badge-danger">Fail</span>' ?></td>
+              <td><?= $output ?></td>
+              <td><?= $file ?></td>
+              <td><?= $name ?></td>
+              <td><?= $email ?></td>
+              <td><?= $language ?></td>
+              <td><?= $id ?></td>
             </tr>
           <?php } ?>
         </tbody>
@@ -211,11 +228,62 @@ if (!isset($_GET['json'])) {
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
   </body>
 
   </html>
 <?php
 } else {
   header('Content-Type: application/json');  // <-- header declaration
+  $files = array_filter(scandir('scripts'), function ($script) {
+    return !is_dir('scripts/' . $script);
+  }); // To remove "." and  ".." from the array output os scabdir
+  
+  $final = [];
+  if ($files) {
+    $submitted = 0;
+    $passes = 0;
+    $fails = 0;
+    foreach ($files as $file) {
+      $submitted++;
+      $script = [];
+      $script['file'] = $file;
+      if (preg_match('/.php$/i', $file)) {
+        $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
+          $script['language'] = "PHP";
+      } elseif (preg_match('/.py$/i', $file)) {
+        $output = shell_exec('python scripts/' . $file. ' 2>&1');
+          $script['language'] = "Python";
+      } elseif (preg_match('/.js$/i', $file)) {
+        $output = shell_exec('node scripts/' . $file. ' 2>&1');
+          $script['language'] = "Javascript";
+      }else{
+          $script['language'] = "Null";
+      }
+  
+      if (isset($output)) {
+        $result = [];
+        preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
+        if (count($result) > 0) {
+          $script['name'] = $result[1];
+          $script['id'] = $result[2];
+          $script['status'] = 'Pass';
+          $script['email'] = $result[5];
+          $script['output'] = substr($output, 0, strpos($output, "."));
+          $passes++;
+        } else {
+          $script['name'] = "";
+          $script['id'] = "";
+          $script['status'] = 'Fail';
+          $script['email'] = '';
+          $script['output'] = substr($output, 0, strpos($output, "."));
+          $fails++;
+        }
+  
+        array_push($final, $script);
+      }
+    }
+  }
   echo json_encode($final, true);    // <--- encode
 }

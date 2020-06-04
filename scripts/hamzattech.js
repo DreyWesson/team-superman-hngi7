@@ -1,7 +1,11 @@
-const hng = {
-    name:"Hamzat Ridwan Babatunde",
-    id:"HNG-00707",
-    language:"JavaScript",
-    email:"ridwanulllah@gmail.com"
-    }
-console.log(`Hello world, this is ${hng.name} with HNGi7 ID ${hng.ID} using ${hng.language} for stage 2 task.${hng.email}`);
+let name = "Hamzat Ridwan Babatunde";
+let id = "HNG-00707";
+let language = "JavaScript";
+let email="ridwanulllah@gmail.com";
+
+
+function hng(name, id, language, email){
+
+  console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`);
+}
+hng(name, id, language, email);

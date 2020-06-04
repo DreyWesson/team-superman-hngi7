@@ -1,11 +1,11 @@
 let person = {
-    fullname: 'Daniel Adekoya',
-    id: 'HNG-05080',
-    language: 'javascript',
-    email: 'adekoyadaniel53@gmail.com'
-},
+  fullname: 'Daniel Adekoya',
+  id: 'HNG-05080',
+  language: 'javascript',
+  email: 'adekoyadaniel53@gmail.com',
 
- function daniel() {
-   return `Hello World, this is ${fullname} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`
+    me(fullname, id, language, email){
+        console.log('Hello World, this '+ person.fullname +' with HNGi7 ID '+ person.id +' using '+ person.language + ' for stage 2 task. '+ person.email +'')
+  }
 }
-console.log(daniel())
+person.me ()     

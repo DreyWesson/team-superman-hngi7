@@ -1,0 +1,1 @@
+console.log("Hello World my name is OGUNEKUN SEGUN VICTOR with HNDi7 ID 03092 using javascript for stage 2 task")

@@ -6,7 +6,7 @@ const favour ={
 }
 
 function personInfo({id, name, language, email}){
-    console.log(`Hello World, this is ${name} with HNGi7 ID ${id}. This script was made using ${language}. You can reach me on ${email}.`);
+    console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.`);
 }
 
 personInfo(favour)

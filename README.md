@@ -1,27 +1,14 @@
-<!-- @format -->
+# Team Superman HNGi7
 
-# Team-superman-hngi7 (Superman's repo for HNGi7)
-
-# GUIDE LINES FOR WRITING YOUR SCRIPT:
-
-## 1. Do NOT embed your script inside any form of html
-
-## 2. Use simple logging functions.
-
-### For JavaScript - console.log()
-
-### for Python - print(),
-
-### for PHP - echo().
-
-## 3. Use this EXACT string format - "Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task.[Email]". Do not add colon ( : ), Dash (-) or any other character.
-
-## 4. Replace everything inside the square brackets including the square brackets, with the correct values.
-
-## 5. I REPEAT DO NOT ADD ANY OTHER CHARACTER TO IT, JUST REPLACE THE APPROPRIATE VALUES.
-
-## 6. Save your file only to the SCRIPTS folder with a UNIQUE name and the appropriate file extension. your username should be unique enough.
-
-# RESULTS SO FAR
-
-[Result page](https://ndubuisijr.github.io/superman-results)
+# GUIDE FOR RUNNING ON YOUR LOCAL SERVER
+* Set up php local server by downloading and installing Xampp or any other local server.
+* Set up php to run on command line by adding the xampp.exe to the system path.
+* Set up node.js by downloading and installing node globally.
+* Set up python environment by downloading and installing python interpreter globally.
+* Clone this repo into the htdocs folder in your xampp installation
+* Open the xampp-control.exe file
+* Start Apache server
+* Start Mysql (optional)
+* open a browser
+* goto http://localhost/team-superman-hngi7
+* goto http://localhost/team-superman-hngi7/index.php?json

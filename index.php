@@ -1,14 +1,18 @@
 <?php
-$files = array_filter(scandir('scripts'), function ($script) {
+$files = isset($_GET['json'])? array_filter(scandir('scripts'), function ($script) {
   return !is_dir('scripts/' . $script);
-}); // To remove "." and  ".." from the array output os scabdir
+}):[]; // To remove "." and  ".." from the array output os scabdir
 
 $final = [];
 if ($files) {
   $submitted = 0;
   $passes = 0;
   $fails = 0;
-  foreach ($files as $file) {
+  foreach ($files as $key => $file) {
+    if(isset($_GET['start']) && isset($_GET['stop'])){
+      if($key < $_GET['start']) continue;
+      if( $key > $_GET['stop']) break;
+    }
     $submitted++;
     $script = [];
     $script['file'] = $file;
@@ -44,6 +48,11 @@ if ($files) {
       array_push($final, $script);
     }
   }
+}
+if(isset($_GET['stop'])){
+  $final['results'] = count($final);
+  $final['left'] = count($files) - $_GET['stop'];
+  $final['total'] = count($files);
 }
 
 if (!isset($_GET['json'])) {
@@ -192,9 +201,9 @@ if (!isset($_GET['json'])) {
           Scripts Results
         </h4>
         <div class='text-center heading mt-2'>
-          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <?php echo $submitted ?></span>
-          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <?php echo $passes ?></span>
-          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <?php echo $fails ?></span>
+          <span class="btn btn-sm btn-primary s" style="font-size: 16px;">Submitted: <span>0</span></span>
+          <span class="btn btn-sm btn-success p" style="font-size: 16px;">Passed: <span>0</span></span>
+          <span class="btn btn-sm btn-danger f" style="font-size: 16px;">Failed: <span>0</span></span>
         </div>
       </div>
       <table id="table" class="table table-hover table-sm table-bordered">
@@ -224,12 +233,46 @@ if (!isset($_GET['json'])) {
     </main>
 
     <!-- Bootstrap core JavaScript -->
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <script>
       $(document).ready(function() {
         $('#table').DataTable();
+      });
+    </script>
+    <script>
+      window.addEventListener('load', () => {
+        const getData = async ({results}) =>{
+          try{
+            const req = await fetch(`${window.location.href}?json&&start=${results}&&stop=${results}`);
+            const data = await req.json();
+            const tbody = document.querySelector('tbody');
+            const s = document.querySelector('.s span');
+            const p = document.querySelector('.p span');
+            const f = document.querySelector('.f span');
+            s.innerHTML = parseInt(s.innerHTML) + data.results;
+            tbody.innerHTML += Object.values(data).reduce((acc, cur)=>{
+              if(typeof cur !== typeof {}) return acc;
+              acc += `<tr id="table-row" class="${cur.status === "Fail"? 'table-danger':'table-success'}">
+              <td><span class="badge ${cur.status === "Fail"? 'badge-danger':'badge-success'}">${cur.status === "Fail"? 'Fail':'Pass'}</span></td>
+              <td>${cur.output}</td>
+              <td>${cur.file}</td>
+              <td>${cur.name}</td>
+              <td>${cur.language}</td>
+              <td>${cur.id}</td>
+            </tr>`;
+            cur.status === "Fail"? (f.innerHTML = parseInt(f.innerHTML)+1):(p.innerHTML = parseInt(p.innerHTML)+1)
+            return acc;
+            },'');
+            if(results >= data.total) return;
+            setTimeout(getData, .1, {results: results+1})
+          }catch(err){
+            console.log(err);
+          }
+        }
+        getData({results: 0});
       });
     </script>
 

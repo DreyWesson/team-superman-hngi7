@@ -1,10 +1,4 @@
-const name = "Bernice Omiunu";
-const Id = "HNG-02649";
-const language = "JavaScript";
-const email = "bel4luv4@gmail.com";
-
-let sayTask = (name, id, lang, email) => {
-console.log(`Hello world, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${email}`);
-};
-
-sayTask(name, Id, language, email);
+const HNG_task = (fullname, id, language, email) => {
+  console.log(`Hello World, this is ${fullname} with HNGi7 ID ${id} using ${language} for stage 2 task ${email}`);
+  }
+  HNG_task("Bernice Omiunu", "HNG-02649", "Javascript","bel4luv4@gmail.com");

@@ -7,6 +7,6 @@ var myHngDetails = {
 
 var { name, id, language, email } = myHngDetails;
 function myHngTask() {
-  return console.log (`Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task ${email}`);
+  return `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}`;
 }
-myHngTask(name, id, language,email);
+console.log(myHngTask(name, id, language,email));

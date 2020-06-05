@@ -2,11 +2,11 @@
 class HngTeams {
 
 
-    private String $greeting = "Hello World";
-    private String $fullName;
-    private String $hngId;
-    private String $email;    
-    private String $language = "JavaScript";
+    private $greeting = "Hello World";
+    private $fullName;
+    private $hngId;
+    private $email;    
+    private $language = "JavaScript";
 
     function __construct($fullname, $hngId, $language, $email)
     {

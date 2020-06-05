@@ -1,1 +1,1 @@
-print("Hello World, this is %s with HNGi7 ID %s using %s for stage 2 task" %("Similoluwa Okunowo","HNG02950","Python"))
+print("Hello World, this is {0} with HNGi7 ID {1} using {2} for stage 2 task.{3}".format("Similoluwa Okunowo","HNG-02950","Python", 'youreamiaakdf@sj.com'))

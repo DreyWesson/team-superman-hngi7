@@ -1,5 +1,5 @@
 def  introduction(fullname ,my_iD,language):
-    print("hello world this is {} with HNGi7  ID {} using  {} for stage 2 task ." .format(name,ID, language))
+    print("Hello World, this is {0} with HNGi7 ID {1} using  {2} for stage 2 task.".format(fullname, my_iD, language))
 
 
 introduction("lawal luqman", "HNG-2322", "Python")

@@ -1,4 +1,4 @@
-const details = [
+const items = [
     "Ajao Ataulmujeeb",
     "HNG-00260",
     "Javascript",
@@ -8,11 +8,11 @@ const details = [
 
 
 
-const text = (name, id, lang, email) => {
+const start = (name, id, lang, email) => {
     console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${email}`)
 };
 
-text(details[0], details[1], details[2], details[3]);
+start(items[0], items[1], items[2], items[3]);
 
 
 

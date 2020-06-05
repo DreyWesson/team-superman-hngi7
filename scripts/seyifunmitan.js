@@ -1,7 +1,6 @@
 
-const introduce = () => {
-  let details = `Hello World, this is Ademujimi Oluwaseyi with HNGi7 ID HNG-00685 using javascript for stage 2 task. oluwaseyifunmitan5@gmail.com`
-  console.log(details)
+function intro(name, id, language, email) {
+  console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`)
 }
 
-introduce()
+intro('Ademujimi Oluwaseyi', 'HNG-00685' , 'Javascript', 'oluwaseyifunmitan5@gmail.com')

@@ -1,60 +1,7 @@
 <?php
-$files = isset($_GET['json'])? array_filter(scandir('scripts'), function ($script) {
-  return !is_dir('scripts/' . $script);
-}):[]; // To remove "." and  ".." from the array output os scabdir
-
-$final = [];
-if ($files) {
-  $submitted = 0;
-  $passes = 0;
-  $fails = 0;
-  foreach ($files as $key => $file) {
-    if(isset($_GET['start']) && isset($_GET['stop'])){
-      if($key < $_GET['start']) continue;
-      if( $key > $_GET['stop']) break;
-    }
-    $submitted++;
-    $script = [];
-    $script['file'] = $file;
-    if (preg_match('/.php$/i', $file)) {
-      $output = exec('php -f scripts/' . $file . ' 2>&1');
-    } elseif (preg_match('/.py$/i', $file)) {
-      $output = exec('python scripts/' . $file);
-    } elseif (preg_match('/.js$/i', $file)) {
-      $output = exec('node scripts/' . $file);
-    }
-
-    if (isset($output)) {
-      $result = [];
-      preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
-      if (count($result) > 0) {
-        $script['name'] = $result[1];
-        $script['id'] = $result[2];
-        $script['language'] = $result[4];
-        $script['status'] = 'Pass';
-        $script['email'] = $result[5];
-        $script['output'] = substr($output, 0, strpos($output, "."));
-        $passes++;
-      } else {
-        $script['name'] = "";
-        $script['id'] = "";
-        $script['language'] = "";
-        $script['status'] = 'Fail';
-        $script['email'] = '';
-        $script['output'] = substr($output, 0, strpos($output, "."));
-        $fails++;
-      }
-
-      array_push($final, $script);
-    }
-  }
-}
-if(isset($_GET['stop'])){
-  $final['results'] = count($final);
-  $final['left'] = count($files) - $_GET['stop'];
-  $final['total'] = count($files);
-}
-
+$submitted = 0;
+$passes = 0;
+$fails = 0;
 if (!isset($_GET['json'])) {
 ?>
 <!DOCTYPE html>
@@ -183,9 +130,9 @@ if (!isset($_GET['json'])) {
           Scripts Results
         </h4>
         <div class='text-center heading mt-2'>
-          <span class="btn btn-sm btn-primary s" style="font-size: 16px;">Submitted: <span>0</span></span>
-          <span class="btn btn-sm btn-success p" style="font-size: 16px;">Passed: <span>0</span></span>
-          <span class="btn btn-sm btn-danger f" style="font-size: 16px;">Failed: <span>0</span></span>
+          <span class="btn btn-sm btn-primary" style="font-size: 16px;">Submitted: <div id="submitted"></div></span>
+          <span class="btn btn-sm btn-success" style="font-size: 16px;">Passed: <div id="passes"></div></span>
+          <span class="btn btn-sm btn-danger" style="font-size: 16px;">Failed: <div id="fails"></div></span>
         </div>
       </div>
       <table id="table" class="table table-hover table-sm table-bordered">
@@ -201,59 +148,135 @@ if (!isset($_GET['json'])) {
           </tr>
         </thead>
         <tbody>
+          <?php 
+          $files = array_filter(scandir('scripts'), function ($script) {
+            return !is_dir('scripts/' . $script);
+          }); // To remove "." and  ".." from the array output os scabdir
+          
+          foreach ($files as $file) {
+                $submitted++;
+                $name = "";
+                $id = "";
+                $status = 'Fail';
+                $email = '';
+                $output = '';
+                if (preg_match('/.php$/i', $file)) {
+                  $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
+                    $language = "PHP";
+                } elseif (preg_match('/.py$/i', $file)) {
+                  $output = shell_exec('python scripts/' . $file. ' 2>&1');
+                  $language = "Python";
+                } elseif (preg_match('/.js$/i', $file)) {
+                  $output = shell_exec('node scripts/' . $file. ' 2>&1');
+                  $language = "Javascript";
+                }else{
+                  $language = "Null";
+                }
+            
+                if (isset($output)) {
+                  $result = [];
+                  preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
+                  if (count($result) > 0) {
+                    $name = $result[1];
+                    $id = $result[2];
+                    $status = 'Pass';
+                    $email = $result[5];
+                    $output = substr($output, 0, strpos($output, "."));
+                    $passes++;
+                  } else {
+                    $name = "";
+                    $id = "";
+                    $status = 'Fail';
+                    $email = '';
+                    $output = substr($output, 0, strpos($output, "."));
+                    $fails++;
+                  }
+                } else {
+                  $name = "";
+                  $id = "";
+                  $status = 'Fail';
+                  $email = '';
+                  $output = $output;
+                  $fails++;
+                }
+            ?>
+            <tr id="table-row" <?= $status == 'Pass' ? 'class="table-success"' : 'class="table-danger"' ?>>
+              <td><?php echo $status == 'Pass' ? '<span class="badge badge-success">Pass</span>' : '<span class="badge badge-danger">Fail</span>' ?></td>
+              <td><?php echo $output ?></td>
+              <td><?php echo $file ?></td>
+              <td><?php echo $name ?></td>
+              <td><?php echo $email ?></td>
+              <td><?php echo $language ?></td>
+              <td>
+                <?php echo $id ?>
+                <script>
+                  document.getElementById("submitted").innerHTML = <?php echo $submitted ?>;
+                  document.getElementById("passes").innerHTML = <?php echo $passes ?>;
+                  document.getElementById("fails").innerHTML = <?php echo $fails ?>;
+                </script>
+              </td>
+            </tr>
+          <?php } ?>
         </tbody>
       </table>
     </main>
 
     <!-- Bootstrap core JavaScript -->
-  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#table').DataTable();
-      });
-    </script>
-    <script>
-      window.addEventListener('load', () => {
-        const getData = async ({results}) =>{
-          try{
-            const req = await fetch(`${window.location.href}?json&&start=${results}&&stop=${results}`);
-            const data = await req.json();
-            const tbody = document.querySelector('tbody');
-            const s = document.querySelector('.s span');
-            const p = document.querySelector('.p span');
-            const f = document.querySelector('.f span');
-            s.innerHTML = data.total;
-            tbody.innerHTML += Object.values(data).reduce((acc, cur)=>{
-              if(typeof cur !== typeof {}) return acc;
-              acc += `<tr id="table-row" class="${cur.status === "Fail"? 'table-danger':'table-success'}">
-              <td><span class="badge ${cur.status === "Fail"? 'badge-danger':'badge-success'}">${cur.status === "Fail"? 'Fail':'Pass'}</span></td>
-              <td>${cur.output}</td>
-              <td>${cur.file}</td>
-              <td>${cur.name}</td>
-              <td>${cur.email}</td>
-              <td>${cur.language}</td>
-              <td>${cur.id}</td>
-            </tr>`;
-            cur.status === "Fail"? (f.innerHTML = parseInt(f.innerHTML)+1):(p.innerHTML = parseInt(p.innerHTML)+1)
-            return acc;
-            },'');
-            if(parseInt(f.innerHTML) + parseInt(p.innerHTML) >= data.total) return;
-            setTimeout(getData, .1, {results: results+1})
-          }catch(err){
-            console.log(err);
-          }
-        }
-        getData({results: 0});
-      });
-    </script>
-
   </body>
 </html>
 <?php
 } else {
   header('Content-Type: application/json');  // <-- header declaration
+  $files = array_filter(scandir('scripts'), function ($script) {
+    return !is_dir('scripts/' . $script);
+  }); // To remove "." and  ".." from the array output os scabdir
+  
+  $final = [];
+  if ($files) {
+    $submitted = 0;
+    $passes = 0;
+    $fails = 0;
+    foreach ($files as $file) {
+      $submitted++;
+      $script = [];
+      $script['file'] = $file;
+      if (preg_match('/.php$/i', $file)) {
+        $output = shell_exec('php -f scripts/' . $file . ' 2>&1');
+          $script['language'] = "PHP";
+      } elseif (preg_match('/.py$/i', $file)) {
+        $output = shell_exec('python scripts/' . $file. ' 2>&1');
+          $script['language'] = "Python";
+      } elseif (preg_match('/.js$/i', $file)) {
+        $output = shell_exec('node scripts/' . $file. ' 2>&1');
+          $script['language'] = "Javascript";
+      }else{
+          $script['language'] = "Null";
+      }
+  
+      if (isset($output)) {
+        $result = [];
+        preg_match('/^Hello World, this is ([a-zA-Z -]*) with HNGi7 ID ((HNG-|)[0-9]{1,5}) using (Python|PHP|JavaScript|Node.js) for stage 2 task.(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}))$/i', $output, $result);
+        if (count($result) > 0) {
+          $script['name'] = $result[1];
+          $script['id'] = $result[2];
+          $script['status'] = 'Pass';
+          $script['email'] = $result[5];
+          $script['output'] = substr($output, 0, strpos($output, "."));
+          $passes++;
+        } else {
+          $script['name'] = "";
+          $script['id'] = "";
+          $script['status'] = 'Fail';
+          $script['email'] = '';
+          $script['output'] = substr($output, 0, strpos($output, "."));
+          $fails++;
+        }
+  
+        array_push($final, $script);
+      }
+    }
+  }
   echo json_encode($final, true);    // <--- encode
 }

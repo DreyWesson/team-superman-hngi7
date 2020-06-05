@@ -1,7 +1,7 @@
 #message for hng campaign.
 def message(full_name,ID,language,email):
     #variable to store  the message.
-    messag = "Hello World, this is" + " " + full_name +" "+ "with HNGi7 ID"+" " +ID+" " +"using" +" "+language+" "+"for stage 2 task."+ email
+    messag = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}".format(full_name, ID, language, email)
     print(messag)
     
 #call the function

@@ -1,6 +1,6 @@
 let name = "Seun Ikubukuola";
 let id = "04810";
-let language = "NodeJs";
+let language = "Javascript";
 let email = "stchawenzy1405@gmail.com";
 
 function myDetails() {

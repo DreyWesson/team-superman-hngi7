@@ -11,7 +11,7 @@ function displayMessage() {
                 " using " 
                 + progLang + 
                 " for stage 2 task."
-                + email");
+                + email);
 }
 
 displayMessage();

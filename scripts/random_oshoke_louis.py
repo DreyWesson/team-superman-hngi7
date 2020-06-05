@@ -10,5 +10,5 @@ id= "HNG-01673"
 lang = "python"
 email= "goldbars.ng@gmail.com"
 
-print(greet_hello("fname", id, lang, email))
+print(greet_hello(fname, id, lang, email))
 

@@ -6,7 +6,7 @@
           console.log (
                 `Hello World, this is ${fullName} with HNGI7 ID ${id} using ${language} for stage 2 task.${email}`
             );
-  }
+  };
 
   myInfomation();
 

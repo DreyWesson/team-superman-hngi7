@@ -9,4 +9,5 @@ email = 'omolojakazeem@gmail.com'
 language = 'Python'
 >>>>>>> 76e0d68d619296c4c96dc01e4d33d342b8cabea9
 
-print (f"Hello World, this is {name} with HNGi7 ID {hng_id} using {language} for stage 2 task.{email}")
+print("Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}".format(name, hng_id, language, email)
+      )

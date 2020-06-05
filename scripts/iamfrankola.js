@@ -1,6 +1,8 @@
-var name = 'Kolapo Francis Uthman';
-var id = 'HNG-03952';
-var language = 'JavaScript';
-var email = 'iamfrankola@mail.com';
+var name = "Kolapo Francis Uthman";
+var id = "HNG-03952";
+var language = "JavaScript";
+var email = "iamfrankola@mail.com";
 
-console.log(`Hello World, this is ${name} with HNG ID ${id} using ${language} for stage 2 task.${email}`);
+console.log(
+  `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task.${email}`
+);

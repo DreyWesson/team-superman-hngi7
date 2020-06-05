@@ -1,9 +1,11 @@
-name = None
-id = None
-lang = None
-message = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task"
+name = 'Totoola Kehinde'
+id = 'HNG-04512'
+lang = 'Python'
+email = 'totoolakenny@gmail.com'
 
-def userDetails(name, id, lang):
-    return message.format(name, id, lang)
+message = 'Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}'.format(name, id, lang, email)
 
-print(userDetails('Totoola Kehinde', 'HNG-04512', 'Python'))
+def userDetails():
+    return message
+
+print(userDetails())

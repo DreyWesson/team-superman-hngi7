@@ -1,1 +1,1 @@
-print("Hello World, this is Richmond Ayitey with HNGi7 ID [HNG-00234] using Python language for HNGi7 task 2.")
+ print("Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}".format("Richmond Ayitey","HND-00234","Python","richmondayitey12@gmail.com"))

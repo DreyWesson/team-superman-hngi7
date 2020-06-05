@@ -1,0 +1,1 @@
+console.log ("Hello World, this is Gold-Mudiaga with HNGi7 ID HNG-46537 using JavaScript for stage 2 task.goldnelson1@gmail.com")

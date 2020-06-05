@@ -1,7 +1,8 @@
 const fullName = "Favour Ezinne Arua";
 const id = "HNG-04184";
 let lang = "Javascript";
+let email = "favourvalg@gmail.com";
 
 console.log(
-    "Hello World, This is " + fullName + ", "+"with HNGi7 ID as " + id + " using "+ lang +" for stage 2 task."
-    );
+    "Hello World, this is " + fullName + " with HNGi7 ID " + id + " using "+ lang +" for stage 2 task." + email
+  );

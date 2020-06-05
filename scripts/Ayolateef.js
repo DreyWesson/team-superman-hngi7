@@ -7,6 +7,6 @@ const task = [
 ];
 const lateef =(name,id,lang,email) => {
 console.log(`Hello World, this is ${name} with HNGi7 ID ${id} 
-using ${lang} for stage 2 task .${email}`)
+using ${lang} for stage 2 task.${email}`)
 };
 lateef(task[0],task[1],task[2],task[3]);

@@ -1,8 +1,8 @@
-# A function to accept 4 string arguments and return an expected string 
-# containing the HNGi7 Intern profile
+(name, language, Id, email) = ('lawal luqman', 'Python, HTML and CSS', 'HNG-2322','luqmanlajani@gmail.com') 
 
-def say_hello(full_name, id:int, language, email):
-    return (f"Hello World, this is {full_name} with HNGi7 ID {id} and email{adress} using  {language},format for stage 2 task")
+def profile_format(name, language, Id, email):
+    return print (f"Hello world, this is {name} with HNGi7 ID {Id} using {language} for stage 2 task {email}")
+    return  ('Hello World, this is ' + (name) + ' with HNGi7 ID ' + (Id) + ' using ' + (language) + ' for stage 2 task. ' + (email))
 
-
-print(say_hello("Lawal luqman", "HNG-2322", "python"  "luqmanlajani@gmail.com")
+profile_format('lawal luqman', 'Python, HTML and CSS', 'HNG-2322','sammy4excellence97@gmail.com') 
+print (profile_format('lawal luqman', 'Python, HTML and CSS', 'HHG-2322','luqmanlajani@gmail.com'))

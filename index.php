@@ -225,7 +225,7 @@ if (!isset($_GET['json'])) {
             const s = document.querySelector('.s span');
             const p = document.querySelector('.p span');
             const f = document.querySelector('.f span');
-            s.innerHTML = parseInt(s.innerHTML) + data.results;
+            s.innerHTML = data.total;
             tbody.innerHTML += Object.values(data).reduce((acc, cur)=>{
               if(typeof cur !== typeof {}) return acc;
               acc += `<tr id="table-row" class="${cur.status === "Fail"? 'table-danger':'table-success'}">
@@ -240,7 +240,7 @@ if (!isset($_GET['json'])) {
             cur.status === "Fail"? (f.innerHTML = parseInt(f.innerHTML)+1):(p.innerHTML = parseInt(p.innerHTML)+1)
             return acc;
             },'');
-            if(results >= data.total) return;
+            if(parseInt(f.innerHTML) + parseInt(p.innerHTML) >= data.total) return;
             setTimeout(getData, .1, {results: results+1})
           }catch(err){
             console.log(err);

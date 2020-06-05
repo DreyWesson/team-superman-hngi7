@@ -1,5 +1,1 @@
-def hng_stage2_task(name, id, lang, email):
-    print(f" Hello World, this is {name} with HNGi7 ID:  {id} using {lang} for stage 2 task.{email}")
-
-
-hng_stage2_task("Abdul Rafik Al-hassan", "HNG-05318", "Python","aral-hassan001@st.ug.edu.gh")
+print("Hello World, this is Abdul Rafik Al-hassan  with HNGi7 ID HNG-05318 and email aral-hassan001@st.ug.edu.gh using Python for stage 2 task")

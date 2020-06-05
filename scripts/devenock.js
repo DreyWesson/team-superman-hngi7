@@ -1,7 +1,7 @@
 const myDetails = (myName, myId, myStackLanguage,email) =>{
     this.myName = myName;
     this.myId = myId;
-    this.myStackLanguage;
+    this.myStackLanguage = myStackLanguage;
     this.email = email;
 }
 

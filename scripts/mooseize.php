@@ -1,5 +1,13 @@
 <?php
-$stage2 = 'Hello World, This is Oluwasegun Ajayi with HNGi7 INTERNSHIP ID HNG-03879 using PHP for stage 2 task';
-echo $stage2;
+$name = "Oluwasegun Ajayi";
+$Iid = "HNG-03879";
+$language = "PHP";
+$email = "ajayimooseize@gmail.com";
+
+
+$stage_two='Hello World, this is '.$name .' with HNGi7 ID '. $Iid.' using '.$language . ' for stage 2 task.'.$email;
+
+echo $stage_two;
+
 
 ?>

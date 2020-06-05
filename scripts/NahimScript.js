@@ -4,13 +4,13 @@ var progLang = "JavaScript";
 var email = "nahimadebisi@gmail.com";
 
 function displayMessage() {
-    console.log("Hello World, this is '
+    console.log("Hello World, this is "
                 + fullName + 
-                ' with HNGi7 ID ' 
+                " with HNGi7 ID " 
                 + id + 
-                ' using ' 
+                " using " 
                 + progLang + 
-                ' for stage 2 task.'
+                " for stage 2 task."
                 + email");
 }
 

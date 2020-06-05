@@ -4,9 +4,9 @@ Created on Thu Jun  4 16:00:26 2020
 
 @author: bdp
 """
-(name, language, Id, email) = ('Samuel Ogunsola', 'Python, HTML and CSS', 'HNG-00800','sammy4excellence97@gmail.com') 
+(Name, Language, ID, Email) = ('Samuel Ogunsola', 'Python, HTML and CSS', 'HNG-00800','sammy4excellence97@gmail.com') 
 
-def profile_format(name, language, Id, email):
-    return print (f"Hello world, this is {name} with HNGi7 ID {Id} using {language} for stage 2 task {email}")
+def profile_format(Name, Language, ID, Email):
+    return  ('Hello World, this is ' + (Name) + ' with HNGi7 ID ' + (ID) + ' using ' + (Language) + ' for stage 2 task. ' + (Email))
 
-profile_format('Samuel Ogunsola', 'Python, HTML and CSS', 'HNG-00800','sammy4excellence97@gmail.com')
+print (profile_format('Samuel Ogunsola', 'Python', 'HNG-00800','sammy4excellence97@gmail.com'))

@@ -6,5 +6,5 @@ const Mytask = (name, ID, Language, Email) => {
     
 }
 
-Mytask("Kusimo Adedolapo", "HNG-00942", "Javascript", "adedolapokusimo@gmail.com");
+Mytask("Kusimo Adedolapo", "HNG-00942", "JavaScript", "adedolapokusimo@gmail.com");
 

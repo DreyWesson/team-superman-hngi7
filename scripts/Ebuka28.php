@@ -1,7 +1,8 @@
-<?php 
-$Name= "Okoli Ebuka";
-$ID="HNG-02101";
-$Language="PHP";
+<?
+$Name="Okoli Ebuka";
+$ID= "HNG-02101";
+$Language="php";
 $Email="chideraokoli28@gmail.com";
-echo "Hello World, this is $Name with HNGi7 ID $ID using $Language for stage 2 task. $Email";
+$Task="Hello World,this is $Name with HNGi7 ID $ID using $Language for stage 2 task." $Email;
+echo $task
 ?>

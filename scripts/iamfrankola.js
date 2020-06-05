@@ -4,5 +4,3 @@ var language = 'Javascript';
 var email = 'iamfrankola@mail.com';
 
 console.log(`Hello world, this is ${fullName} with HNG ID ${id} using ${language} for stage 2 task.${email}`);
-
-git config --global user.email iamfrankola@mail.com

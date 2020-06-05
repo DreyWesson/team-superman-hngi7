@@ -1,0 +1,5 @@
+email = (" goldenwritertolu@gmail.com")
+fullname = (" Toluwani Oluwamuyiwa")
+HNGiD = (" HNG-04068")
+Language = (" Python")
+print("Hello World, this is" + fullname + " with HNGi7 ID " + HNGiD + " using" + Language + " for stage 2 task.{}"  .format(email))

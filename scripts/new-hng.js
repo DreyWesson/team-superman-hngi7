@@ -1,4 +1,3 @@
-//You didn't use the exact sentence and please help yourself and keep things simple
 function myInfomation(
   fullName = "Abdul-Kareem Abdul-Fattah",
   id = "HNG-01706",

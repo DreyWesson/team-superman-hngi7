@@ -14,7 +14,7 @@ function sayHelloToHNG(name, Id, language, email) {
 let devName = "Adeogun Babafemi";
 let devId = "HNG-03777";
 let devLanguage = "JavaScript";
-let devEmail = "yourmail@mail.com";
+let devEmail = "babafem.adeogun@gmail.com";
 
 let int_object = new Intern(devName, devId, devLanguage, devEmail);
 sayHelloToHNG(

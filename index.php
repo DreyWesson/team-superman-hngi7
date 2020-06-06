@@ -168,7 +168,7 @@ if (!isset($_GET['json'])) {
                   $language = "Python";
                 } elseif (preg_match('/.js$/i', $file)) {
                   $output = shell_exec('node scripts/' . $file. ' 2>&1');
-                  $language = "Javascript";
+                  $language = "JavaScript";
                 }else{
                   $language = "Null";
                 }

@@ -1,11 +1,12 @@
-let name;
-let id;
-let email;
-let language
+function sayHello(fullname, id, language, email) {
 
-name = "Mfonabasi Thompson";
-id = "HNG-04400";
-email = "mfonabasithompson@gmail.com";
-language = "Javascript";
-
-alert("Hello World, this is ", name, "with HNGi7", id, "and email" ,email, "using", language );
+  fullname = "Mfonabasi Thompson";
+  id = "HNG-04400";
+  language = "Javascript";
+  email = "thompsonmfonabasi@gmail.com";
+  
+  console.log(
+    `Hello World, this is ${fullname} with HNGi7 ${id} using ${language} for stage 2 task.${email}`
+  );
+}
+sayHello();

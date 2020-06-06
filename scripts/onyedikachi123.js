@@ -1,24 +1,5 @@
-const fs = require('fs');
-const http = require('http')
-const port = 3000
+let fullName = 'Onyedikach Shedrach Erugo';
+let ID = 'HNG-03614';
+let language =  'Javascript';
 
-const server = http.createServer(function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' })
-  fs.readFile('README.txt', function(error, data) {
-      if (error) {
-          res.writeHead(404)
-          res.write('Error: file Not Found')
-      } else {
-          res.write(data)
-      }
-      res.end()
-  })
-})
-
-server.listen(port, function(error) {
-  if (error) {
-      console.log('Something went wrong', error)
-  } else {
-      console.log('Server is listening on port ' + port)
-  }
-})
+console.log(`Hello World, this is ${fullName} with HNGi7 ID ${ID} using ${language} for stage 2 task`);

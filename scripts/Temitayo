@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<title>Oluwafemi.Oladosu</title>
+<body>
+<script>
+    const name = "Temitayo"
+    const id = "HNG-06371"
+    const language = "Javascript";
+    console.log('HELLO WORLD, I am ${name} with HNGi7 ID ${id} using ${language}
+    for stage 2 task')
+</script>
+</body>
+</html>

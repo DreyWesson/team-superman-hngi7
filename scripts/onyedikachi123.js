@@ -1,5 +1,3 @@
-
- 
 let fullName = 'Onyedikachi Shedrach Erugo';
 let ID = 'HNG-03614';
 let language =  'Javascript';

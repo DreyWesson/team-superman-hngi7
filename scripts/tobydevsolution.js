@@ -1,16 +1,10 @@
 
+   const name = "Tobiloba Orekoya"
+   const id = "HNG-05551"
+   const lang = "Javascript"
+   const mail = "tobilobaorekoya19@gmail.com"
 
-   const fullName = 'Tobiloba Orekoya'
-   const hnGID  =  'HNG-05551'
-   const lanGuage = 'JavaScript'
-   const eMail  = 'tobilobaorekoya19@gmail.com'
-
-   
-    const Intro = () => {
-
-    console.log(`Hello World, This is ${fullName} with HNGi7 ID ${hnGID} using
-    ${lanGuage} for stage 2 task.${eMail} `);
- 
-    
-    }
-    Intro()
+   const PromoteMe = () => {
+   console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${mail}`)
+   }
+   PromoteMe()

@@ -1,5 +1,8 @@
 // hngi7 script for task 2 
 
+const introducingMyself = (Name, Identity, Language, Mail) => {
+    console.log(
+        `Hello World, this is ${Name} with HNGi7 ID ${Identity} using ${Language} for stage 2 task.${Mail}`)};
 
-var msg = "Hello World. This is [Awosanya Olumide Oloruntobi] with HNGi7 ID [HNG-06492] using [Javascript] for stage 2 task and my email is [olu.awosanya13@gmail.com].";
-console.log(msg);
+introducingMyself('Awosanya Olumide Oloruntobi','HNG-06492','JavaScript','olu.awosanya13@gmail.com')
+

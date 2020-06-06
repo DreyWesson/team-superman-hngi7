@@ -6,11 +6,11 @@ const outPut =function(){
 
     let EmailInfo = "bemyguest9ite@gmail.com";
 
-    let languageUsed = "javaScript";
+    let languageUsed = "JavaScript";
 
     let information = "Hello World, this is" + myName +
 
- " with HNGi7 ID " + hngId + " using " + languageUsed + " for stage 2 task. " + EmailInfo
+ " with HNGi7 ID " + hngId + " using " + languageUsed + "for stage 2 task."+ EmailInfo
      console.log(information)
 }
     outPut()

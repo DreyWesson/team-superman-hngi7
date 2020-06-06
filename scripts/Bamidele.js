@@ -1,0 +1,1 @@
+console.log("Hello World, this is Akinyemi Bamidele with HNGi7 ID HNG-06633 using Javascript for stage 2 task.akinyemibamidele2@gmail.com");

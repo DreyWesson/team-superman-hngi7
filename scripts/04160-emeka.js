@@ -11,5 +11,5 @@ class HNGinterns{
     }
 }
 
-const newTntern = new HNGinterns('Emeka Uja', 'HNG-04160', 'Javascript', 'ujadnith@gmail.com');
+const newTntern = new HNGinterns('Emeka Uja', 'HNG-04160', 'Javascript', 'ujadninth@gmail.com');
 console.log(newTntern.getBio());

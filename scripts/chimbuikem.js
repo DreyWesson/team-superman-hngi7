@@ -5,7 +5,7 @@ function Info (name, id, email, language){
   this.yourLanguage = language;
 }
 
-let myName="Levi Chibuike";
+let myName ="Levi Chibuike";
 let myId="HNG-01626";
 let myEmail = "levichibuike99@gmail.com";
 let myLanguage="JavaScript";

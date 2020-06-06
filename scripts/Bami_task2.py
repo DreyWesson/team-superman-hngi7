@@ -1,5 +1,6 @@
-fullname="Elijah Ayobami Bello"
-id="HNG-00563"
-email="bellijaah@gmail.com"
-language="python"
-print("Hello World, this is "+fullname+" with HNGi7 ID "+id+" and email "+email+ " using "+language+" for stage 2 task")
+Name = "Elijah Ayobami Bello"
+ID = "HNG-00563"
+Language = "Python"
+Email = "bellijaah@gmail.com"
+
+print ("Hello World, this is "+Name+" with HNGi7 ID "+ID+ " using "+Language+" for stage 2 task. "+Email)

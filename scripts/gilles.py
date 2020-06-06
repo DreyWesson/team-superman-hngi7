@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
 
-print("Hello World, this is {0} with HNGi7 ID {1} using {2} for stage 2 task.{3}".format('Adjowotor Gabriel Gilles','HNG-03738','Python','gabbygilles1@gmail.com'))
+print("Hello World, this is Adjowotor Gabriel Gilles with HNGi7 ID HNG-03738 using Python for stage 2 task. gabbygilles1@gmail.com")

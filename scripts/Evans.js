@@ -1,7 +1,7 @@
 var myHngDetails = {
   name: "Okocha Chibueze Evans",
-  id: " HNG - 02521",
-  language: "Javascript",
+  id: "HNG-02521",
+  language: "JavaScript",
   email: "eokocha0@gmail.com"
 };
 

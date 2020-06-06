@@ -1,13 +1,11 @@
- 
-
 <?php
+$name = "Roland Chukwudi Blessing ";
 
- //function to display intern details
- function intern($name, $id, $pro_lang, $email)
- {
-     return "Hello World, this is ".$name. " with HNGi7 id ".$id. " using ".$pro_lang." for stage 2 task.".$email;
- }
+$hng_id = "HNG-02628";
 
- $output = intern("Roland Blessing", "HNG-02628","PHP","Rolyconsult@gmail.com");
+$language = "PHP";
 
- echo $output;
+$email = "Rolyconsult@gmail.com";
+
+
+echo "Hello World, this is {$name} with HNGi7 ID {$hng_id} using {$language} for stage 2 task.{$email}";

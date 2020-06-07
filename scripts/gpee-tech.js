@@ -1,4 +1,4 @@
-const fullName = "God'spower Etuk";
+const fullName = "Godspower Etuk";
 const id = "HNG-02259";
 let lang = "Javascript";
 let email = "godspoweretuk38@gmail.com";

@@ -1,1 +1,1 @@
-console.log("Hello World, this is Olalekan David Adekunle with HNGi7 ID HNG-00447 and email adekunleolalekand@gmail.com using javascript tor stage 2 task");
+console.log("Hello World, this is Olalekan David Adekunle with HNGi7 ID HNG-00447 using javascript tor stage 2 task");

@@ -1,22 +1,12 @@
 
-class Person {
-  constructor( fullName, id, language, email) {
-    
-    this.fullName = fullName;
-    this.id = id;
-    this.language = language;
-    this.email = email;
-  }
-  output() {
-    return `Hello World,This is ${this.fullName} with HNGi7 ID ${this.id} using ${this.language} for stage 2 task.${this.email}`;
-  }
-}
+const name = 'Aluko Ayodele';
+const id = 'HNG-02258';
+const lang = 'JavaScript;
+const email =  'ayodelealuko009.aa@gmail.com';
+  
+    console.log( `Hello World,This is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task.${email}`);
 
-const blackDev = new Person(
-  'Aluko Ayodele',
-  'HNG-02258',
-  'JavaScript',
-  'ayodelealuko009.aa@gmail.com',
-);
 
-console.log(blackDev.output());
+
+
+

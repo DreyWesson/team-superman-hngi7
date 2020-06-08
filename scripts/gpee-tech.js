@@ -1,6 +1,18 @@
-const fullName = "Godspower Etuk";
-const id = "HNG-02259";
-let lang = "JavaScript";
-let email = "godspoweretuk38@gmail.com";
+function myDetails(myName, myId, langused, myEmail){
+    this.myName=myName;
+    this.myId=myId;
+    this.langused=langused;
+    this.myEmail=myEmail;
+}
 
-console.log("HelloWorld, This is " + fullName + "," + " with HNGi7 ID as " + id + "using" + lang + "for stage 2 task.")
+function printDetails(name, id, lang, email){
+    console.log(`Hello World, this is ${myName} with HNGi7 ID ${myId} using ${langused} for stage 2 task.${myEmail}`)
+}
+
+let myName="Godspower Etuk";
+let myId="HNG-02259";
+let langused="Javascript";
+let myEmail="godspoweretuk38@gmail.com";
+
+let myDetail=new myDetails(myName, myId, langused, myEmail);
+printDetails(myDetails.myName, myDetails.myId, myDetails.langused, myDetails.email);
